@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router;
 
-router.get('/',);
+const mainController = require('../controllers/main');
 
-router.get('/login');
+router.get('/',mainController.index);
 
-router.get('/register',);
+router.get('/login', mainController.login);
 
-router.get('/product/:product',);
+router.get('/register', mainController.register);
 
-router.get('/profile', );
+router.get('/product/:product', mainController.detalleProducto);
 
-router.get('/product-add/:product', );
+router.get('/profile', mainController.profile);
 
+router.get('/product-add/:product', mainController.addProduct);
 
 module.exports = router;

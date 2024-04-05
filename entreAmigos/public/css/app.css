@@ -4,11 +4,11 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
+  --yellow: #f9a388;
+  --dark-blue: #335288;
+  --light-blue: #ad7041;
+  --gray: #b8793c;
+  --light-gray: #eedcc8;
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
 }
