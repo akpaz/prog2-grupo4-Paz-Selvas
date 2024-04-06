@@ -8,7 +8,7 @@ const mainController = {
         
     },
     register: function (req, res) {
-        
+        res.render('register');
     },
     detalleProducto: function (req, res) {
         
