@@ -2,7 +2,7 @@
 
 const mainController = {
     index: function (req, res) {
-        
+        res.render('index')
     },
     login: function (req, res) {
         
@@ -20,6 +20,9 @@ const mainController = {
         
     },
     profileEdit: function (req, res) {
+        
+    },
+    busqueda:function (req, res) {
         
     }
 }
