@@ -1,4 +1,6 @@
 const datosProductos = require('../db/main');
+const usuario = datosProductos.usuario;
+const productos = datosProductos.productos;
 
 const mainController = {
     index: function (req, res) {
@@ -11,7 +13,14 @@ const mainController = {
         res.render('register');
     },
     detalleProducto: function (req, res) {
-        res.render('product');
+        let idProducto = req.params.idProducto;
+        let producto = null;
+        for (let i = 0; i < productos.length; i++) {
+            if (idProducto == productos[i].id) {
+                producto = productos[i];
+            }; 
+        };
+        res.render('product', {idProducto : idProducto, producto : producto});
     },
     profile: function (req, res) {
         

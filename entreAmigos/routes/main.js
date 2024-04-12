@@ -9,11 +9,11 @@ router.get('/login', mainController.login);
 
 router.get('/register', mainController.register);
 
-router.get('/product/:product', mainController.detalleProducto);
+router.get('/product/:idProducto', mainController.detalleProducto);
 
 router.get('/profile', mainController.profile);
 
-router.get('/product-add/:product', mainController.addProduct);
+router.get('/product-add/:idProducto', mainController.addProduct);
 
 router.get('resultadosBusqueda/:busqueda', mainController.busqueda);
 
