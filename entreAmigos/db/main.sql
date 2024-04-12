@@ -28,3 +28,15 @@ create table Productos (
     foreign key (idUsuarioPropietario) references Usuarios(id)
 );
 
+create table Comentarios (
+	id int unsigned primary key auto_increment,
+	idProducto int unsigned,
+    idUsuario int unsigned,
+    createdAt timestamp default current_timestamp,
+	updatedAt timestamp default current_timestamp on update current_timestamp,
+	deletedAt timestamp null on update current_timestamp,
+    
+	foreign key (idProducto) references Productos(id),
+    foreign key (idUsuario) references Usuarios(id)
+);
+
