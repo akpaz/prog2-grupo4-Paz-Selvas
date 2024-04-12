@@ -1,4 +1,4 @@
-
+const datosProductos = require('../db/main');
 
 const mainController = {
     index: function (req, res) {
@@ -11,7 +11,7 @@ const mainController = {
         res.render('register');
     },
     detalleProducto: function (req, res) {
-        
+        res.render('product');
     },
     profile: function (req, res) {
         
