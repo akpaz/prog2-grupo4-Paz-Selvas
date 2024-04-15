@@ -17,4 +17,6 @@ router.get('/product-add/:idProducto', mainController.addProduct);
 
 router.get('resultadosBusqueda/:busqueda', mainController.busqueda);
 
+router.get('/profile-edit', mainController.profileEdit);
+
 module.exports = router;
