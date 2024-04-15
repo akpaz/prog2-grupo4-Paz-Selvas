@@ -194,6 +194,14 @@ hr {
   border-bottom: 1px solid var(--light-gray);
 }
 
+.imgMascota{
+  height: 20vh;
+}
+
+.nombresIndex{
+  color: #335288;
+}
+
 .product-box_data {
   padding: 15px;
   position: relative;
