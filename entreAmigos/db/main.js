@@ -68,7 +68,7 @@ const datosProductos = {
             {nombreUsuario : 'Mario Cesar', texto : 'Que original su nombre! Me encanta', fotoPerfil : '/images/users/mariocesar.png'},
             {nombreUsuario : 'Martina Gonzalez', texto : 'Hermoso <3', fotoPerfil : '/images/users/martinagonzalez.png'}
         ]},
-        {id : 10, imagen : '/images/products/moka.png', nombre : 'Moka', descripcion : 'Tímido al principio, pero una vez que confía, es leal y afectuoso.', edad : 3, especie : 'gato', sexo : 'femenino', personalidad : 'amable y atento', comentarios : [
+        {id : 10, imagen : '/images/products/moka.png', nombre : 'Moka', descripcion : 'Tímida al principio, pero una vez que confía, es leal y afectuosa.', edad : 3, especie : 'gato', sexo : 'femenino', personalidad : 'amable y atenta', comentarios : [
             {nombreUsuario : 'Juan Pablo Gomez', texto : 'La quiero adoptar ya!', fotoPerfil : '/images/users/juanpablogomez.png'},
             {nombreUsuario : 'Lucia Rodriguez', texto : 'Me la quiero trater a casa, es muy tierna', fotoPerfil : '/images/users/luciarodriguez.png'},
             {nombreUsuario : 'Juana Aguirre', texto : 'Que ternura', fotoPerfil : '/images/users/juanaaguirre.png'},
