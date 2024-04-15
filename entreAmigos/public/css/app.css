@@ -499,6 +499,10 @@ textarea.form-input {
   color: #ad7041;
 }
 
+.recordarCheck{
+  margin-bottom: 2%;
+}
+
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;

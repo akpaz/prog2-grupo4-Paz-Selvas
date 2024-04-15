@@ -14,8 +14,6 @@
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
 			<!-- Formulario login-->
 				<form action="/" method="get">
 					<div class="divs-form">
@@ -27,14 +25,15 @@
 						<input type="password" name="password" id="password" class="form-input">
 					</div>
 					<div>
-						<label for="recordar"><input type="checkbox" id="recordar" name="recordar"> Recordarme</label>
+						<input type="checkbox" id="recordar" name="recordar" class="recordarCheck" value="recordar">
+						<label for="recordar" class="form-label">Recordarme</label>
 					</div>
 					<div>
 						<button type="submit" class="button-form">Login</button>
 					</div>
 				</form>
 				
-			</h2>
+			
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
