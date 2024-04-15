@@ -17,7 +17,7 @@ const datosProductos = {
         {id : 2, imagen : 'peter.png', nombre : 'Peter', descripcion : 'Peter tiene 12 años y es una cruza con Beagle. Se lleva muy bien con los niños.', edad : 12, especie : 'perro', sexo : 'masculino', personalidad : 'leal y amistoso', comentarios : [
             {nombreUsuario : 'dwayneJohnson', texto : 'Es hermoso!', fotoPerfil : 'dwayneJohnson.png'},
             {nombreUsuario : 'chrisEvans', texto : 'Que ternura.', fotoPerfil : 'chrisEvans.png'},
-            {nombreUsuario : 'chrisHemsworth', texto : 'Parece un Jack Russell!', fotoPerfil : 'chrisHemswroth.png'},
+            {nombreUsuario : 'chrisHemsworth', texto : 'Parece un Jack Russell!', fotoPerfil : 'chrisHemsworth.png'},
             {nombreUsuario : 'henryCavill', texto : 'Que lindas manchas.', fotoPerfil : 'henryCavill.png'},
         ]},
 
@@ -41,10 +41,10 @@ const datosProductos = {
             {nombreUsuario : 'willSmith', texto : '<3 <3', fotoPerfil : 'willSmith.png'}
         ]},
         {id : 6, imagen : 'molly.png', nombre : 'Molly', descripcion : 'Energética y amigable, Molly está lista para acompañarte en todas tus aventuras. ', edad : 1, especie : 'perro', sexo : 'femenino', personalidad : 'alegre y juguetona', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'Qué tierna <3', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Es hermosa!', fotoPerfil : 'luciarodriguez.png'},
+            {nombreUsuario : 'tomCruise', texto : 'Qué tierna <3', fotoPerfil : 'tomCruise.png'},
+            {nombreUsuario : 'tomHanks', texto : 'Es hermosa!', fotoPerfil : 'tomHanks.png'},
             {nombreUsuario : 'Juana Aguirre', texto : 'Que chiquita, una ternura', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Siegue en adopcion?', fotoPerfil : 'mariocesar.png'},
+            {nombreUsuario : 'Mario Cesar', texto : 'Sigue en adopcion?', fotoPerfil : 'mariocesar.png'},
             {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
         ]},
         {id : 7, imagen : 'bella.png', nombre : 'Bella', descripcion : 'Amable y compasivo, ideal para alguien que valore la compañía tranquila.', edad : 2, especie : 'perro', sexo : 'femenino', personalidad : 'independiente y amigable', comentarios : [
@@ -70,7 +70,7 @@ const datosProductos = {
         ]},
         {id : 10, imagen : 'moka.png', nombre : 'Moka', descripcion : 'Tímida al principio, pero una vez que confía, es leal y afectuosa.', edad : 3, especie : 'gato', sexo : 'femenino', personalidad : 'amable y atenta', comentarios : [
             {nombreUsuario : 'Juan Pablo Gomez', texto : 'La quiero adoptar ya!', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Me la quiero trater a casa, es muy tierna', fotoPerfil : 'luciarodriguez.png'},
+            {nombreUsuario : 'Lucia Rodriguez', texto : 'Me la quiero traer a casa, es muy tierna', fotoPerfil : 'luciarodriguez.png'},
             {nombreUsuario : 'Juana Aguirre', texto : 'Que ternura', fotoPerfil : 'juanaaguirre.png'},
             {nombreUsuario : 'Mario Cesar', texto : 'Ay es hermosa!', fotoPerfil : 'mariocesar.png'},
             {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
