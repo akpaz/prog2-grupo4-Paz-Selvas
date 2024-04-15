@@ -41,7 +41,7 @@ const mainController = {
                 resultados =   `Lo sentimos, no hay resultados para ${busqueda}!`
             };
         };
-        res.render('search-results', {resultados : resultados});
+        res.render('search-results', {busqueda : busqueda, resultados : resultados});
     }
 };
 
