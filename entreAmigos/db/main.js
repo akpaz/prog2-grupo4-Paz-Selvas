@@ -4,7 +4,7 @@ const datosProductos = {
             password:'hola1234', 
             nacimiento:'12/01/2002', 
             dni:42560978, 
-            foto:'pedroPerez'},
+            foto:'pedroPerez.png'},
     productos : [
         {id : 1, imagen : 'toby.png', nombre : 'Toby', descripcion : 'Toby tiene 3 años y es muy amigable y sociable. Está buscando un hogar con mucho cariño.', edad : 3, especie : 'perro', sexo : 'masculino', personalidad : 'sociable y amigable', comentarios : [
             {nombreUsuario : 'zacEfron', texto : 'Qué tierno <3', fotoPerfil : 'zacEfron.png'},
@@ -34,11 +34,11 @@ const datosProductos = {
             {nombreUsuario : 'rodridelaSerna', texto : 'Me lo quiero llevar a casa!', fotoPerfil : 'rodridelaSerna.png'}
         ]},
         {id : 5, imagen : 'simba.png', nombre : 'Simba', descripcion : 'Ideal si necesitas un amigo tranquilo y relajado que disfruta de largas siestas a tu lado.', edad : 6, especie : 'gato', sexo : 'masculino', personalidad : 'reservado y tranquilo', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'Es igual al de la peli! jajaja', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Es hermoso!!', fotoPerfil : 'luciarodriguez.png'},
-            {nombreUsuario : 'Juana Aguirre', texto : 'Mi gatito es igual! Se llevarian re bien', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Ay es muy tierno', fotoPerfil : 'mariocesar.png'},
-            {nombreUsuario : 'Martina Gonzalez', texto : '<3 <3', fotoPerfil : 'martinagonzalez.png'}
+            {nombreUsuario : 'johnnyDepp', texto : 'Es igual al de la peli! jajaja', fotoPerfil : 'johnnyDepp.png'},
+            {nombreUsuario : 'leoDiCaprio', texto : 'Es hermoso!!', fotoPerfil : 'leoDiCaprio.png'},
+            {nombreUsuario : 'jenniferLawrence', texto : 'Mi gatito es igual! Se llevarian re bien', fotoPerfil : 'jenniferLawrence.png'},
+            {nombreUsuario : 'rachelMcAdams', texto : 'Ay es muy tierno', fotoPerfil : 'rachelMcAdams.png'},
+            {nombreUsuario : 'willSmith', texto : '<3 <3', fotoPerfil : 'willSmith.png'}
         ]},
         {id : 6, imagen : 'molly.png', nombre : 'Molly', descripcion : 'Energética y amigable, Molly está lista para acompañarte en todas tus aventuras. ', edad : 1, especie : 'perro', sexo : 'femenino', personalidad : 'alegre y juguetona', comentarios : [
             {nombreUsuario : 'Juan Pablo Gomez', texto : 'Qué tierna <3', fotoPerfil : 'juanpablogomez.png'},
