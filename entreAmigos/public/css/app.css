@@ -27,9 +27,13 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family:"Signika Negative", sans-serif;
   font-weight: 300;
   background-color: var(--light-gray);
+}
+
+h2 {
+  font-family: "Pacifico", cursive;
 }
 
 ul,
