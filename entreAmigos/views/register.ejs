@@ -15,69 +15,38 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Formulario de register -->
-			<form action="/" method="get">
-				<div>
-					<label for="email">Ingrese su email:</label>
-					<input id="email" type="email" name="email">
+			<form action="/" method="get" class="form">
+				<div class="divs-form">
+					<label for="email" class="form-label">Ingrese su email:</label>
+					<input id="email" type="email" name="email" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="usuario" class="form-label">Ingrese un nombre de usuario:</label>
+					<input type="text" name="usuario" id="usuario" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="password" class="form-label">Ingrese una contraseña:</label>
+					<input type="password" name="password" id="password" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="nacimiento" class="form-label">Ingrese su fecha de nacimiento:</label>
+					<input type="date" name="nacimiento" id="nacimiento" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="dni" class="form-label">Ingrese su número de documento:</label>
+					<input type="number" name="dni" id="dni" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="fotoPerfil" class="form-label">Ingrese una foto de perfil:</label>
+					<input type="text" name="fotoPerfil" id="fotoPerfil" class="form-input">
 				</div>
 				<div>
-					<label for="usuario">Ingrese un nombre de usuario:</label>
-					<input type="text" name="usuario" id="usuario">
-				</div>
-				<div>
-					<label for="password">Ingrese una contraseña:</label>
-					<input type="password" name="password" id="password">
-				</div>
-				<div>
-					<label for="nacimiento">Ingrese su fecha de nacimiento:</label>
-					<input type="date" name="nacimiento" id="nacimiento">
-				</div>
-				<div>
-					<label for="dni">Ingrese su número de documento:</label>
-					<input type="number" name="dni" id="dni">
-				</div>
-				<div>
-					<label for="fotoPerfil">Ingrese una foto de perfil:</label>
-					<input type="text" name="fotoPerfil" id="fotoPerfil">
-				</div>
-				<div>
-					<button type="submit">Registrarse</button>
+					<button type="submit" class="button-form">Registrarse</button>
 				</div>
 			</form>
 
 	<!-- footer -->
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-credit-card"></i>
-						<h2>Pagá con tarjeta o en efectivo</h2>
-						<p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago.
-							¡Y
-							siempre es seguro!</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-gift"></i>
-						<h2>Envío gratis desde $ 1.999</h2>
-						<p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un
-							beneficio de Mercado Puntos.</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-user-shield"></i>
-						<h2>Seguridad, de principio a fin</h2>
-						<p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás
-							siempre protegido.</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- /footer -->
+	<%- include('./partials/footer') %>
 </body>
 
 </html>
