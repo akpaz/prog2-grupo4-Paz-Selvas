@@ -471,8 +471,6 @@ textarea.form-input {
   background-color: #ad7041;
   border-color: white;
   display: flex;
-  width: 100%;
-  height: 45px;
   margin-bottom: 15px;
   font-size: 1.5em;
   border-radius: 8px;
