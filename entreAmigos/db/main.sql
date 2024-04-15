@@ -75,3 +75,34 @@ values(default,1,'/images/products/peter.png','Peter','Peter tiene 12 años y es
 
 insert into Productos
 values(default,2,'/images/products/luna.png','Luna','Reservada pero cariñosa, buscando un lugar tranquilo para compartir afecto.',3,'gato','femenino','sensible y paciente',default,default,default);
+
+insert into Productos
+values(default, 2, '/images/products/oliver.png', 'Oliver', 'Curioso observador que busca un hogar donde pueda explorar sin límites.', 12, 'gato', 'masculino', 'independiente y curioso', default, default, default);
+
+insert into Productos
+values(default, 2, '/images/products/simba.png', 'Simba', 'Ideal si necesitas un amigo tranquilo y relajado que disfruta de largas siestas a tu lado.', 6, 'gato', 'masculino', 'reservado y tranquilo', default, default, default);
+
+insert into Productos
+values(default, 1, '/images/products/molly.png', 'Molly', 'Energética y amigable, Molly está lista para acompañarte en todas tus aventuras. ', 1, 'perro', 'femenino', 'alegre y juguetona', default, default, default);
+
+insert into Productos
+values(default, 1, '/images/products/bella.png', 'Bella', 'Amable y compasivo, ideal para alguien que valore la compañía tranquila.', 2, 'perro', 'femenino', 'independiente y amigable', default, default, default);
+
+insert into Productos
+values(default, 1, '/images/products/charlie.png', 'Charlie', 'Leal y protector, esperando ansiosamente ser parte de una familia amorosa', 4, 'perro', 'masculino', 'inteligente y afectivo', default, default, default);
+
+insert into Productos
+values(default, 1, '/images/products/tyson.png', 'Tyson', 'Compañero de abarazos que te reconforta con su calidez y afecto', 2, 'perro', 'masculino', 'cariñoso y atento', default, default, default);
+
+insert into Productos 
+values(default, 2, '/images/products/moka.png', 'Moka', 'Tímida al principio, pero una vez que confía, es leal y afectuosa.', 3, 'gato', 'femenino', 'amigable y atena', defualt, default, default);
+
+-- 3 comentarios
+insert into Comentarios 
+values(default, 9, 1, 'Es lo más lindo que vi!!', default, default, default);
+
+insert into Comentarios
+values(default, 7, 2, 'Que ternuraaa!', default, default, default);
+
+insert into Comentarios
+values(default, 3, 3, 'Que lindo es adoptar!', default, default, default);
