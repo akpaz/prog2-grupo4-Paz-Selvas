@@ -33,16 +33,7 @@ const mainController = {
         res.render('profile-edit', {usuario:usuario});
     },
     busqueda:function (req, res) {
-        let busqueda = req.params.busqueda;
-        let resultados = null;
-        for (let i = 0; i < productos.length; i++) {
-            if (productos[i].nombre == busqueda) {
-                resultados = productos[i]
-            } else{
-                resultados =   `Lo sentimos, no hay resultados para ${busqueda}!`
-            };
-        };
-        res.render('search-results', {busqueda : busqueda, resultados : resultados});
+    res.render('search-results');
     }
 };
 
