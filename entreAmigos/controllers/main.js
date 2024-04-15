@@ -4,7 +4,7 @@ const productos = datosProductos.productos;
 
 const mainController = {
     index: function (req, res) {
-        res.render('index')
+        res.render('index', {productos:productos})
     },
     login: function (req, res) {
         res.render('login');
