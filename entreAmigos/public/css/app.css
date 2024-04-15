@@ -196,6 +196,7 @@ hr {
 
 .imgMascota{
   height: 20vh;
+  width: auto;
 }
 
 .nombresIndex{
@@ -492,9 +493,14 @@ textarea.form-input {
   color: white;
   flex-direction: column;
 }
+
 .button-form:hover{
   background-color: #eedcc8;
   color: #ad7041;
+}
+
+.recordarCheck{
+  margin-bottom: 2%;
 }
 
 /*====== Profile ======*/
