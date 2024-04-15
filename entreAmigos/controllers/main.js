@@ -27,10 +27,10 @@ const mainController = {
         res.render('profile', {usuario:usuario, productos:productos});
     },
     addProduct: function (req, res) {
-        res.render('product-add');
+        res.render('product-add', {usuario:usuario});
     },
     profileEdit: function (req, res) {
-        res.render('profile-edit');
+        res.render('profile-edit', {usuario:usuario});
     },
     busqueda:function (req, res) {
         let busqueda = req.params.busqueda;

@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-<%- include('../partials/head') %>
-<body>
+
 	<!-- Header -->
 	<header class="main-header">
 		<div class="container">
@@ -22,7 +18,7 @@
 	
 				<div class="col-12 col-md-4">
 					<a class="main-header_credit-link">
-						<i class="fas fa-hand-holding-usd"></i>
+						<i class="fas fa-paw"></i>
                         Uniendo patitas, creando hogares.
 					</a>
 				</div>
@@ -40,13 +36,13 @@
 	
 				<ul class="right-navbar">
 					<li><a href="/profile">
-							<%= usuario.usuario %> <i class="fas fa-user"></i>
+							<%= usuario.usuario %> <i class="fa-solid fa-user"></i>
 						</a>
 					</li>
 					<li>
 						<form action="/" method="post">
 							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+								Cerrar sesión <i class="fa-solid fa-right-from-bracket"></i>
 							</button>
 						</form>
 					</li>
@@ -63,5 +59,3 @@
 	</header>
 	<!-- /Header -->
 	
-</body>	
-</html>

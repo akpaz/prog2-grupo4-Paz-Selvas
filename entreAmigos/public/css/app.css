@@ -480,7 +480,7 @@ textarea.form-input {
   border: solid 1px var(--gray);
   padding: 0 15px;
   color: white;
-
+  flex-direction: column;
 }
 .button-form:hover{
   background-color: #eedcc8;
