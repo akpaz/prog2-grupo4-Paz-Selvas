@@ -1,31 +1,39 @@
 const datosProductos = {
-    usuario : {email:'pedroperez@gmail.com', 
-            usuario:'pedroperez', 
-            password:'hola1234', 
-            nacimiento:'12/01/2002', 
-            dni:42560978, 
-            foto:'pedroPerez.png'},
-    productos : [
-        {id : 1, imagen : 'toby.png', nombre : 'Toby', descripcion : 'Toby tiene 3 años y es muy amigable y sociable. Está buscando un hogar con mucho cariño.', edad : 3, especie : 'perro', sexo : 'masculino', personalidad : 'sociable y amigable', comentarios : [
-            {nombreUsuario : 'zacEfron', texto : 'Qué tierno <3', fotoPerfil : 'zacEfron.png'},
-            {nombreUsuario : 'tomHolland', texto : 'Quiero adoptarlo ya!', fotoPerfil : 'tomHolland.png'},
-            {nombreUsuario : 'jenniferAnniston', texto : 'Se va a llevar muy bien con mi perrito.', fotoPerfil : 'jenniferAnniston.png'},
-            {nombreUsuario : 'margotRobbie', texto : 'Tengo un caniche y se porta re bien.', fotoPerfil : 'margotRobbie.png'},
-            {nombreUsuario : 'emmaWatson', texto : 'Que belleza.', fotoPerfil : 'emmaWatson.png'}
-        ]},
+    usuario: {
+        email: 'pedroperez@gmail.com',
+        usuario: 'pedroperez',
+        password: 'hola1234',
+        nacimiento: '12/01/2002',
+        dni: 42560978,
+        foto: 'pedroPerez.png'
+    },
+    productos: [
+        {
+            id: 1, imagen: 'toby.png', nombre: 'Toby', descripcion: 'Toby tiene 3 años y es muy amigable y sociable. Está buscando un hogar con mucho cariño.', edad: 3, especie: 'perro', sexo: 'masculino', personalidad: 'sociable y amigable', comentarios: [
+                { nombreUsuario: 'zacEfron', texto: 'Qué tierno <3', fotoPerfil: 'zacEfron.png' },
+                { nombreUsuario: 'tomHolland', texto: 'Quiero adoptarlo ya!', fotoPerfil: 'tomHolland.png' },
+                { nombreUsuario: 'jenniferAnniston', texto: 'Se va a llevar muy bien con mi perrito.', fotoPerfil: 'jenniferAnniston.png' },
+                { nombreUsuario: 'margotRobbie', texto: 'Tengo un caniche y se porta re bien.', fotoPerfil: 'margotRobbie.png' },
+                { nombreUsuario: 'emmaWatson', texto: 'Que belleza.', fotoPerfil: 'emmaWatson.png' }
+            ]
+        },
 
-        {id : 2, imagen : 'peter.png', nombre : 'Peter', descripcion : 'Peter tiene 12 años y es una cruza con Beagle. Se lleva muy bien con los niños.', edad : 12, especie : 'perro', sexo : 'masculino', personalidad : 'leal y amistoso', comentarios : [
-            {nombreUsuario : 'dwayneJohnson', texto : 'Es hermoso!', fotoPerfil : 'dwayneJohnson.png'},
-            {nombreUsuario : 'chrisEvans', texto : 'Que ternura.', fotoPerfil : 'chrisEvans.png'},
-            {nombreUsuario : 'chrisHemsworth', texto : 'Parece un Jack Russell!', fotoPerfil : 'chrisHemsworth.png'},
-            {nombreUsuario : 'henryCavill', texto : 'Que lindas manchas.', fotoPerfil : 'henryCavill.png'},
-        ]},
+        {
+            id: 2, imagen: 'peter.png', nombre: 'Peter', descripcion: 'Peter tiene 12 años y es una cruza con Beagle. Se lleva muy bien con los niños.', edad: 12, especie: 'perro', sexo: 'masculino', personalidad: 'leal y amistoso', comentarios: [
+                { nombreUsuario: 'dwayneJohnson', texto: 'Es hermoso!', fotoPerfil: 'dwayneJohnson.png' },
+                { nombreUsuario: 'chrisEvans', texto: 'Que ternura.', fotoPerfil: 'chrisEvans.png' },
+                { nombreUsuario: 'chrisHemsworth', texto: 'Parece un Jack Russell!', fotoPerfil: 'chrisHemsworth.png' },
+                { nombreUsuario: 'henryCavill', texto: 'Que lindas manchas.', fotoPerfil: 'henryCavill.png' },
+            ]
+        },
 
-        {id : 3, imagen : 'luna.png', nombre : 'Luna', descripcion : 'Reservada pero cariñosa, buscando un lugar tranquilo para compartir afecto.', edad : 3, especie : 'gato', sexo : 'femenino', personalidad : 'sensible y paciente', comentarios : [
-            {nombreUsuario : 'guillermoFrancella', texto : 'Es hermosa!', fotoPerfil : 'guillermoFrancella.png'},
-            {nombreUsuario : 'ricardoDarin', texto : 'Siempre quise un gatito!', fotoPerfil : 'ricardoDarin.png'},
-            {nombreUsuario : 'luisanaLopilato', texto : 'La mejor compañia', fotoPerfil : 'luisanaLopilato.png'},
-        ]},
+        {
+            id: 3, imagen: 'luna.png', nombre: 'Luna', descripcion: 'Reservada pero cariñosa, buscando un lugar tranquilo para compartir afecto.', edad: 3, especie: 'gato', sexo: 'femenino', personalidad: 'sensible y paciente', comentarios: [
+                { nombreUsuario: 'guillermoFrancella', texto: 'Es hermosa!', fotoPerfil: 'guillermoFrancella.png' },
+                { nombreUsuario: 'ricardoDarin', texto: 'Siempre quise un gatito!', fotoPerfil: 'ricardoDarin.png' },
+                { nombreUsuario: 'luisanaLopilato', texto: 'La mejor compañia', fotoPerfil: 'luisanaLopilato.png' },
+            ]
+        },
 
         {id : 4, imagen : 'oliver.png', nombre : 'Oliver', descripcion : 'Curioso observador que busca un hogar donde pueda explorar sin límites.', edad : 12, especie : 'gato', sexo : 'masculino', personalidad : 'independiente y curioso', comentarios : [
             {nombreUsuario : 'diegoPeretti', texto : 'Es muy tierno!', fotoPerfil : 'diegoPeretti.png'},
