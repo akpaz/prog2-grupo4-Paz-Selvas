@@ -113,6 +113,19 @@ hr {
   cursor: pointer;
 }
 
+.sloganHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tituloHeader{
+  color: #335288;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
