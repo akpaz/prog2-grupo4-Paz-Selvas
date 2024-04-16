@@ -43,37 +43,37 @@ const datosProductos = {
         {id : 6, imagen : 'molly.png', nombre : 'Molly', descripcion : 'Energética y amigable, Molly está lista para acompañarte en todas tus aventuras. ', edad : 1, especie : 'perro', sexo : 'femenino', personalidad : 'alegre y juguetona', comentarios : [
             {nombreUsuario : 'tomCruise', texto : 'Qué tierna <3', fotoPerfil : 'tomCruise.png'},
             {nombreUsuario : 'tomHanks', texto : 'Es hermosa!', fotoPerfil : 'tomHanks.png'},
-            {nombreUsuario : 'Juana Aguirre', texto : 'Que chiquita, una ternura', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Sigue en adopcion?', fotoPerfil : 'mariocesar.png'},
-            {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
+            {nombreUsuario : 'juliaRoberts', texto : 'Que chiquita, una ternura', fotoPerfil : 'juliaRoberts.png'},
+            {nombreUsuario : 'zendaya', texto : 'Sigue en adopcion?', fotoPerfil : 'zendaya.png'},
+            {nombreUsuario : 'bradPitt', texto : 'Que belleza.', fotoPerfil : 'bradPitt.png'}
         ]},
         {id : 7, imagen : 'bella.png', nombre : 'Bella', descripcion : 'Amable y compasivo, ideal para alguien que valore la compañía tranquila.', edad : 2, especie : 'perro', sexo : 'femenino', personalidad : 'independiente y amigable', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'Es bellisima!', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Es hermosa!', fotoPerfil : 'luciarodriguez.png'},
-            {nombreUsuario : 'Juana Aguirre', texto : 'Que lindos los ojitos!', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Ternura total', fotoPerfil : 'mariocesar.png'},
-            {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
+            {nombreUsuario : 'meganFox', texto : 'Es bellisima!', fotoPerfil : 'meganFox.png'},
+            {nombreUsuario : 'nataliePortman', texto : 'Es hermosa!', fotoPerfil : 'nataliePortman.png'},
+            {nombreUsuario : 'chrisNolan', texto : 'Que lindos los ojitos!', fotoPerfil : 'chrisNolan.png'},
+            {nombreUsuario : 'cillianMurphy', texto : 'Ternura total', fotoPerfil : 'cillianMurphy.png'},
+            {nombreUsuario : 'florencePugh', texto : 'Que belleza.', fotoPerfil : 'florencePugh.png'}
         ]},
         {id : 8, imagen : 'charlie.png', nombre : 'Charlie', descripcion : 'Leal y protector, esperando ansiosamente ser parte de una familia amorosa.', edad : 4, especie : 'perro', sexo : 'masculino', personalidad : 'inteligente y afectivo', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'Gran nombre para un gran perro!', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Es muy tierno', fotoPerfil : 'luciarodriguez.png'},
-            {nombreUsuario : 'Juana Aguirre', texto : 'Lo puedo pasar a ver?', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Tengo uno parecido!', fotoPerfil : 'mariocesar.png'},
-            {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
+            {nombreUsuario : 'wandaNara', texto : 'Gran nombre para un gran perro!', fotoPerfil : 'wandaNara.png'},
+            {nombreUsuario : 'mauroIcardi', texto : 'Es muy tierno', fotoPerfil : 'mauroIcardi.png'},
+            {nombreUsuario : 'kunAguero', texto : 'Lo puedo pasar a ver?', fotoPerfil : 'kunAguero.png'},
+            {nombreUsuario : 'lionelMessi', texto : 'Tengo uno parecido!', fotoPerfil : 'lionelMessi.png'},
+            {nombreUsuario : 'antoRoccuzzo', texto : 'Que belleza.', fotoPerfil : 'antoRoccuzzo.png'}
         ]},
         {id : 9, imagen : 'tyson.png', nombre : 'Tyson', descripcion : 'Compañero de abrazos que te reconforta con su calidez y afecto.', edad : 2, especie : 'perro', sexo : 'masculino', personalidad : 'cariñoso y atento', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'Qué tierno <3', fotoPerfil : 'juanpablogomez.png'},
+            {nombreUsuario : 'pauloDybala', texto : 'Qué tierno <3', fotoPerfil : 'pauloDybala.png'},
             {nombreUsuario : 'Lucia Rodriguez', texto : 'Mi amiga tiene uno igual!', fotoPerfil : 'luciarodriguez.png'},
             {nombreUsuario : 'Juana Aguirre', texto : 'Se lleva bien con otros perritos?', fotoPerfil : 'juanaaguirre.png'},
             {nombreUsuario : 'Mario Cesar', texto : 'Que original su nombre! Me encanta', fotoPerfil : 'mariocesar.png'},
             {nombreUsuario : 'Martina Gonzalez', texto : 'Hermoso <3', fotoPerfil : 'martinagonzalez.png'}
         ]},
         {id : 10, imagen : 'moka.png', nombre : 'Moka', descripcion : 'Tímida al principio, pero una vez que confía, es leal y afectuosa.', edad : 3, especie : 'gato', sexo : 'femenino', personalidad : 'amable y atenta', comentarios : [
-            {nombreUsuario : 'Juan Pablo Gomez', texto : 'La quiero adoptar ya!', fotoPerfil : 'juanpablogomez.png'},
-            {nombreUsuario : 'Lucia Rodriguez', texto : 'Me la quiero traer a casa, es muy tierna', fotoPerfil : 'luciarodriguez.png'},
-            {nombreUsuario : 'Juana Aguirre', texto : 'Que ternura', fotoPerfil : 'juanaaguirre.png'},
-            {nombreUsuario : 'Mario Cesar', texto : 'Ay es hermosa!', fotoPerfil : 'mariocesar.png'},
-            {nombreUsuario : 'Martina Gonzalez', texto : 'Que belleza.', fotoPerfil : 'martinagonzalez.png'}
+            {nombreUsuario : 'tiniStoessel', texto : 'La quiero adoptar ya!', fotoPerfil : 'tiniStoessel.png'},
+            {nombreUsuario : 'shakira', texto : 'Me la quiero traer a casa, es muy tierna', fotoPerfil : 'shakira.png'},
+            {nombreUsuario : 'justinBieber', texto : 'Que ternura', fotoPerfil : 'justinBieber.png'},
+            {nombreUsuario : 'snoopDogg', texto : 'Ay es hermosa!', fotoPerfil : 'snoopDogg.png'},
+            {nombreUsuario : 'leoParedes', texto : 'Que belleza.', fotoPerfil : 'leoParedes.png'}
         ]}
     ]
 };
