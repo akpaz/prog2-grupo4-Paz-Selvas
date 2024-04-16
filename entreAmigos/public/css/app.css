@@ -122,7 +122,8 @@ hr {
 
 .tituloHeader{
   color: #335288;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 500;
 }
 
 
