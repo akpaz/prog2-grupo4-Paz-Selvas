@@ -71,12 +71,30 @@ values(default,1,'toby.png','Toby','Toby tiene 3 años y es muy amigable y socia
 	(default, 1, 'tyson.png', 'Tyson', 'Compañero de abarazos que te reconforta con su calidez y afecto', 2, 'perro', 'masculino', 'cariñoso y atento', default, default, default),
 	(default, 2, 'moka.png', 'Moka', 'Tímida al principio, pero una vez que confía, es leal y afectuosa.', 3, 'gato', 'femenino', 'amigable y atenta', default, default, default);
 
--- 3 comentarios
-insert into Comentarios 
-values(default, 9, 1, 'Es lo más lindo que vi!!', default, default, default);
-
+-- comentarios
 insert into Comentarios
-values(default, 7, 2, 'Que ternuraaa!', default, default, default);
-
-insert into Comentarios
-values(default, 3, 3, 'Que lindo es adoptar!', default, default, default);
+	values(default, 6, 1, 'Qué tierna <3', default, default, default),
+	(default, 6, 2, 'Es hermosa!', default, default, default),
+	(default, 6, 3, 'Que chiquita, una ternura', default, default, default),
+	(default, 6, 4, 'Sigue en adopcion?', default, default, default),
+	(default, 6, 5, 'Que belleza.', default, default, default),
+	(default, 7, 1, 'Es bellisima!', default, default, default),
+	(default, 7, 2, 'Es hermosa!', default, default, default),
+	(default, 7, 3, 'Que lindos los ojitos!', default, default, default),
+	(default, 7, 4, 'Ternura total', default, default, default),
+	(default, 7, 5, 'Que belleza.', default, default, default),
+	(default, 8, 1, 'Gran nombre para un gran perro!', default, default, default),
+	(default, 8, 2, 'Es muy tierno', default, default, default),
+	(default, 8, 3, 'Lo puedo pasar a ver?', default, default, default),
+	(default, 8, 4, 'Tengo uno parecido!', default, default, default),
+	(default, 8, 5, 'Que lindos los ojitos!', default, default, default),
+	(default, 9, 1, 'Qué tierno <3', default, default, default),
+	(default, 9, 2, 'Mi amiga tiene uno igual!', default, default, default),
+	(default, 9, 3, 'Se lleva bien con otros perritos?', default, default, default),
+	(default, 9, 4, 'Que original su nombre! Me encanta', default, default, default),
+	(default, 9, 5, 'Hermoso <3', default, default, default),
+	(default, 10, 1, 'La quiero adoptar ya!', default, default, default),
+	(default, 10, 2, 'Me la quiero traer a casa, es muy tierna', default, default, default),
+	(default, 10, 3, 'Que ternura', default, default, default),
+	(default, 10, 4, 'Ay es hermosa!', default, default, default),
+	(default, 10, 5, 'Qué tierno <3', default, default, default);
