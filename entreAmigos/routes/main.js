@@ -13,9 +13,11 @@ router.get('/product/:idProducto', mainController.detalleProducto);
 
 router.get('/profile', mainController.profile);
 
-router.get('/product-add/:idProducto', mainController.addProduct);
+router.get('/product-add/', mainController.addProduct);
 
-router.get('resultadosBusqueda/:busqueda', mainController.busqueda);
+router.get('/product-edit/:idProducto', mainController.editProduct);
+
+router.get('/resultadosBusqueda/:busqueda', mainController.busqueda);
 
 router.get('/profile-edit', mainController.profileEdit);
 

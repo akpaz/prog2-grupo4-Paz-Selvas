@@ -5,7 +5,7 @@ const productos = datosProductos.productos;
 
 const mainController = {
     index: function (req, res) {
-        res.render('index', {productos:productos})
+        res.render('index', { productos: productos })
     },
     login: function (req, res) {
         res.render('login');
@@ -19,21 +19,31 @@ const mainController = {
         for (let i = 0; i < productos.length; i++) {
             if (idProducto == productos[i].id) {
                 producto = productos[i];
-            }; 
+            };
         };
-        res.render('product', {idProducto : idProducto, producto : producto});
+        res.render('product', { producto: producto });
     },
     profile: function (req, res) {
-        res.render('profile', {usuario:usuario, productos:productos});
+        res.render('profile', { usuario: usuario, productos: productos });
     },
     addProduct: function (req, res) {
-        res.render('product-add', {usuario:usuario});
+        res.render('product-add', { usuario: usuario });
+    },
+    editProduct: function (req, res) {
+        let idProducto = req.params.idProducto;
+        let producto = null;
+        for (let i = 0; i < productos.length; i++) {
+            if (idProducto == productos[i].id) {
+                producto = productos[i];
+            };
+        };
+        res.render('product-edit', { usuario: usuario, producto: producto })
     },
     profileEdit: function (req, res) {
-        res.render('profile-edit', {usuario:usuario});
+        res.render('profile-edit', { usuario: usuario });
     },
-    busqueda:function (req, res) {
-    res.render('search-results');
+    busqueda: function (req, res) {
+        res.render('search-results');
     }
 };
 
