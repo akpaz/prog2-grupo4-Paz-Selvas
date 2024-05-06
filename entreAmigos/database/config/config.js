@@ -1,8 +1,8 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "root",
+    "database": "piGrupo4EntreAmigos",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -20,4 +20,4 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-}
+};
