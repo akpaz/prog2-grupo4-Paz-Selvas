@@ -31,8 +31,8 @@ app.use(session({
 }));
 
 app.use('/users', usersRouter);
-app.use('/', productsRouter);
-app.use('profile',usuariosRouter);
+app.use('/products', productsRouter);
+app.use('/profile',usuariosRouter);
 app.use('',comentariosRouter);
 
 
