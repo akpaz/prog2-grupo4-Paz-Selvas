@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 var usersRouter = require('./routes/users');
 const usuariosRouter = require('./routes/usuarios');
@@ -21,6 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Session
+app.use(session({
+  secret: 'usuarios',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.use('/users', usersRouter);
 app.use('/', productsRouter);
