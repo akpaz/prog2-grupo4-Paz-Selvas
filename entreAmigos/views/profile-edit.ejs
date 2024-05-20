@@ -16,37 +16,40 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> </h2>
 			<!--Formulario de Editar Perfil-->
-			<div class="divs-form">
-				<label for="email" class="form-label">Editar email:</label>
-				<input id="email" type="email" name="email" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="usuario" class="form-label">Editar nombre de usuario:</label>
-				<input type="text" name="usuario" id="usuario" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="password" class="form-label">Editar contraseña:</label>
-				<input type="password" name="password" id="password" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="password" class="form-label">Confirmar nueva contraseña:</label>
-				<input type="password" name="password" id="password" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="nacimiento" class="form-label">Editar fecha de nacimiento:</label>
-				<input type="date" name="nacimiento" id="nacimiento" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="dni" class="form-label">Editar número de documento:</label>
-				<input type="number" name="dni" id="dni" class="form-input">
-			</div>
-			<div class="divs-form">
-				<label for="fotoPerfil" class="form-label">Editar foto de perfil:</label>
-				<input type="text" name="fotoPerfil" id="fotoPerfil" class="form-input">
-			</div>
-			<div>
-				<button type="submit" class="button-form">Guardar cambios</button>
-			</div>
+			<form action="/" method="post">
+				<div class="divs-form">
+					<label for="email" class="form-label">Editar email:</label>
+					<input id="email" type="email" name="email" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="usuario" class="form-label">Editar nombre de usuario:</label>
+					<input type="text" name="usuario" id="usuario" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="password" class="form-label">Editar contraseña:</label>
+					<input type="password" name="password" id="password" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="password" class="form-label">Confirmar nueva contraseña:</label>
+					<input type="password" name="password" id="password" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="nacimiento" class="form-label">Editar fecha de nacimiento:</label>
+					<input type="date" name="nacimiento" id="nacimiento" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="dni" class="form-label">Editar número de documento:</label>
+					<input type="number" name="dni" id="dni" class="form-input">
+				</div>
+				<div class="divs-form">
+					<label for="fotoPerfil" class="form-label">Editar foto de perfil:</label>
+					<input type="text" name="fotoPerfil" id="fotoPerfil" class="form-input">
+				</div>
+				<div>
+					<button type="submit" class="button-form">Guardar cambios</button>
+				</div>
+			</form>
+
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
