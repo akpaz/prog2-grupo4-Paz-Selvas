@@ -6,15 +6,8 @@ const usuariosController = {
         res.render('login');
     },
     register: function (req, res) {
-        db.Usuario.create({
-          nombreUsuario: req.body.usuario,
-          email: req.body.email,
-          contrasena: req.body.password,
-          fechaDeNacimiento: req.body.nacimiento,
-          dni: req.body.dni,
-          fotoPerfil: req.body.fotoPerfil
-        })
         
+
         res.render('register');
     },
     profile: function (req, res) {
