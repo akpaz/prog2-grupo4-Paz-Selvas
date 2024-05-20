@@ -12,4 +12,6 @@ router.get('/edit', usuariosController.profileEdit);
 
 router.get('/register', usuariosController.register);
 
+router.post('/register', usuariosController.store);
+
 module.exports = router;
