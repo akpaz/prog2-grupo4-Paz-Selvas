@@ -30,6 +30,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// Rutas
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/profile',usuariosRouter);
