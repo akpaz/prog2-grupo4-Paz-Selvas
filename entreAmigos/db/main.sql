@@ -8,7 +8,7 @@ create table Usuarios (
 	id int unsigned primary key auto_increment,
     nombreUsuario varchar(50) unique,
 	email varchar(50) unique,
-    contrasena varchar(50),
+    contrasena varchar(200),
 	fechaDeNacimiento date,
     dni bigint unique,
     fotoPerfil varchar(100),
