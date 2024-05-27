@@ -5,10 +5,18 @@ const usuariosController = {
     login: function (req, res) {
         res.render('login');
     },
-    register: function (req, res) {
-        
+    store: function (req, res) {
+    
+        db.Usuario.create({
+            nombreUsuario: req.body.usuario,
+            email: req.body.email,
+            contrasena: bcrypt.hashSync(req.body.password, 10),
+            fechaDeNacimiento: req.body.nacimiento,
+            dni: req.body.dni,
+            fotoPerfil: req.body.fotoPerfil
+        });
 
-        res.render('register');
+        res.send(req.body);
     },
     profile: function (req, res) {
         res.render('profile', { usuario: usuario, productos: productos });
@@ -16,8 +24,9 @@ const usuariosController = {
     profileEdit: function (req, res) {
         res.render('profile-edit', { usuario: usuario });
     },
-    store: function (req, res) {
-        
+    register: function (req, res) {
+        res.render('register');
+
     }
 }
 
