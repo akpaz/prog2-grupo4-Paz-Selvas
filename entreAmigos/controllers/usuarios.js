@@ -1,6 +1,10 @@
 const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
+const datosProductos = require('../db/main');
+const usuario = datosProductos.usuario;
+const productos = datosProductos.productos;
+
 const usuariosController = {
     login: function (req, res) {
         res.render('login');
