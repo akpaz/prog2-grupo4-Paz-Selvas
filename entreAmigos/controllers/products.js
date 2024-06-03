@@ -5,6 +5,9 @@ const productos = datosProductos.productos;
 const db = require('../database/models');
 
 const productController = {
+    index: function (req, res) {
+        res.render('index', { productos: productos })
+    },
     detalleProducto: function (req, res) {
         let idProducto = req.params.idProducto;
         let producto = null;
