@@ -14,12 +14,18 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Formulario login-->
-				<form action="/" method="post">
+				<form action="/profile/login" method="post">
 					<div class="divs-form">
+						<%if (locals.errors && errors.email) { %>
+							<p><%= errors.email.msg %></p>
+						<% } %>
 						<label for="email" class="form-label">Ingrese su email:</label>
 						<input id="email" type="email" name="email" class="form-input">
 					</div>
 					<div class="divs-form">
+						<% if(locals.errors && errors.password){ %>
+							<p><%= errors.password.msg %></p>
+						<% } %>
 						<label for="password" class="form-label">Ingrese su contraseña:</label>
 						<input type="password" name="password" id="password" class="form-input">
 					</div>

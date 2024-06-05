@@ -15,28 +15,46 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Formulario de register -->
-			<form action="" method="post" class="form">
+			<form action="/profile/register" method="post" class="form">
 				<div class="divs-form">
+					<%if (locals.errors && errors.email) { %>
+						<p><%= errors.email.msg %></p>
+					<% } %>
 					<label for="email" class="form-label">Ingrese su email:</label>
 					<input id="email" type="email" name="email" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.usuario) { %>
+						<p><%= errors.usuario.msg %></p>
+					<% } %>
 					<label for="usuario" class="form-label">Ingrese un nombre de usuario:</label>
 					<input type="text" name="usuario" id="usuario" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.password) { %>
+						<p><%= errors.password.msg %></p>
+					<% } %>
 					<label for="password" class="form-label">Ingrese una contraseña:</label>
 					<input type="password" name="password" id="password" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.nacimiento) { %>
+						<p><%= errors.nacimiento.msg %></p>
+					<% } %>
 					<label for="nacimiento" class="form-label">Ingrese su fecha de nacimiento:</label>
 					<input type="date" name="nacimiento" id="nacimiento" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.dni) { %>
+						<p><%= errors.dni.msg %></p>
+					<% } %>
 					<label for="dni" class="form-label">Ingrese su número de documento:</label>
 					<input type="number" name="dni" id="dni" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.fotoPerfil) { %>
+						<p><%= errors.fotoPerfil.msg %></p>
+					<% } %>
 					<label for="fotoPerfil" class="form-label">Ingrese una foto de perfil:</label>
 					<input type="text" name="fotoPerfil" id="fotoPerfil" class="form-input">
 				</div>

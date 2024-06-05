@@ -492,6 +492,11 @@ textarea.form-input {
   width: 50vw;
 }
 
+.divs-form p{
+  font-size: 20px;
+  color: red;
+}
+
 .button-form{
   width: 50vw;
   height: 5vh;

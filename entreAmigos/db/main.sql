@@ -6,7 +6,7 @@ use piGrupo4EntreAmigos;
 
 create table Usuarios (
 	id int unsigned primary key auto_increment,
-    nombreUsuario varchar(50) unique,
+    nombreUsuario varchar(50),
 	email varchar(50) unique,
     contrasena varchar(200),
 	fechaDeNacimiento date,

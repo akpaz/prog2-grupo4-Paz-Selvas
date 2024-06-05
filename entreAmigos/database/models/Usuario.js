@@ -7,7 +7,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER
         },
         nombreUsuario: {
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING
         },
         email: {
             type: dataTypes.STRING
