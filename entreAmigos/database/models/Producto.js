@@ -49,5 +49,12 @@ module.exports = function(sequelize, dataTypes) {
     };
 
     let Producto = sequelize.define(alias, cols, config);
+    //Contraparte de la relacion con Usuario
+    Producto.associate = function(models){
+        Producto.hasMany(models.Usuario,{
+            as:"usuarios",
+            foreignKey:"idUsuarioPropietario"
+        })
+    }
     return Producto;
 };
