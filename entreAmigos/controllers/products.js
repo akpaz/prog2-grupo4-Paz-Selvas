@@ -14,25 +14,22 @@ const productController = {
         })
         .then(function(productos) {
             if(productos !== undefined){
-                return res.send(productos);
-            } else{
-                res.render('index', { productos: productos })
+                // return res.send(productos);
+                return res.render('index', { productos: productos })
             }
         })
         .catch(function(e) {
             console.log(e);
         })
-        
     },
     detalleProducto: function (req, res) {
         let idProducto = req.params.idProducto;
         let producto = null;
-        for (let i = 0; i < productos.length; i++) {
-            if (idProducto == productos[i].id) {
-                producto = productos[i];
-            };
-        };
-        res.render('product', { producto: producto });
+        db.Producto.findByPk(idProducto)
+        .then(function (producto) {
+            return res.send(producto);
+            return res.render('product', { producto: producto });
+        })
     },
     addProduct: function (req, res) {
         res.render('product-add', { usuario: usuario });
