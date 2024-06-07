@@ -7,8 +7,12 @@ const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
 const usuariosController = {
-    login: function (req, res) {
-        res.render('login');
+    register: function (req, res) {
+        if (req.session.user !== undefined) {
+            return res.redirect('/');
+        }else{
+            return res.render('register');
+        }
     },
     store: function (req, res) {
         let errors = validationResult(req);
@@ -30,17 +34,11 @@ const usuariosController = {
         
         // res.send(req.body);
     },
-    profile: function (req, res) {
-        return res.render('profile', { usuario: usuario, productos: productos });
-    },
-    profileEdit: function (req, res) {
-        return res.render('profile-edit', { usuario: usuario });
-    },
-    register: function (req, res) {
+    login: function (req, res) {
         if (req.session.user !== undefined) {
             return res.redirect('/');
-        }else{
-            return res.render('register');
+        } else{
+            res.render('login');
         }
     },
     processLogin: function(req, res) {
@@ -50,11 +48,11 @@ const usuariosController = {
             db.Usuario.findOne({
                 where: [{email: req.body.email}]
             })
-            .then(function(usuarioEncontrado) {
+            .then(function(usuarioLogueado) {
                 // lo ponemos en session
                 req.session.user = {
-                    email: usuarioEncontrado.email,
-                    userName: usuarioEncontrado.nombreUsuario
+                    email: usuarioLogueado.email,
+                    userName: usuarioLogueado.nombreUsuario
                 }
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
@@ -68,9 +66,14 @@ const usuariosController = {
         }else{
             // Si hay errores, volvemos al formulario con los mensajes
             return res.render('login',{errors: errors.mapped(), old: req.body});
-        }
-        
-    }
+        }   
+    },
+    profile: function (req, res) {
+        return res.render('profile', { usuario: usuario, productos: productos });
+    },
+    profileEdit: function (req, res) {
+        return res.render('profile-edit', { usuario: usuario });
+    },
 }
 
 module.exports = usuariosController;

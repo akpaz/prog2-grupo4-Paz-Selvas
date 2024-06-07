@@ -31,6 +31,20 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(function(req, res, next) {
+  res.locals.usuarioLogueado = {
+    userName: 'Camila'
+  }
+  return next();
+});
+
+app.use(function(req, res, next) {
+  if(req.session.usuarioLogueado != undefined){
+    res.locals.user = req.session.usuarioLogueado
+  }
+  return next();
+});
+
 // Rutas
 app.use('/users', usersRouter);
 app.use('/', productsRouter);
