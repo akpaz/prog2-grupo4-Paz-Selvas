@@ -6,6 +6,19 @@ const db = require('../database/models');
 
 const productController = {
     index: function (req, res) {
+        /* Tratando de traer datos de la db
+        db.Producto.findAll()
+        .then(function(productos) {
+            if(productos !== undefined){
+                return res.send(productos);
+            } else{
+                res.render('index', { productos: productos })
+            }
+        })
+        .catch(function(e) {
+            console.log(e);
+        })
+        */
         res.render('index', { productos: productos })
     },
     detalleProducto: function (req, res) {

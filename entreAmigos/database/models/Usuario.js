@@ -41,7 +41,7 @@ module.exports = function (sequelize, dataTypes) {
         underscored: false
     }
 
-    let Usuarios = sequelize.define(alias,cols, config);
+    let Usuario = sequelize.define(alias,cols, config);
     //Asociando con Producto.js
     Usuario.associate = function(models){
         Usuario.hasMany(models.Producto,{
