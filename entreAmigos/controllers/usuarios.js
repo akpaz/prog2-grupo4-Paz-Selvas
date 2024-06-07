@@ -28,16 +28,20 @@ const usuariosController = {
             return res.render('register', {errors: errors.mapped(), old: req.body})
         }
         
-        res.send(req.body);
+        // res.send(req.body);
     },
     profile: function (req, res) {
-        res.render('profile', { usuario: usuario, productos: productos });
+        return res.render('profile', { usuario: usuario, productos: productos });
     },
     profileEdit: function (req, res) {
-        res.render('profile-edit', { usuario: usuario });
+        return res.render('profile-edit', { usuario: usuario });
     },
     register: function (req, res) {
-        res.render('register');
+        if (req.session.user !== undefined) {
+            return res.redirect('/');
+        }else{
+            return res.render('register');
+        }
     },
     processLogin: function(req, res) {
         let errors = validationResult(req);
@@ -54,7 +58,7 @@ const usuariosController = {
                 }
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
-                    res.cookie('cookieEspecial', 'el dato que quiero guardar', {maxAge: 1000*60*1000000})
+                    res.cookie('usuarioGuardado', req.session.user, {maxAge: 1000*60*1000000})
                 }
                 return res.redirect('/');
             })
