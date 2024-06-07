@@ -62,7 +62,7 @@ values(default,'zacEfron','zacefron@gmail.com','hola123','2003-11-23',43789456,'
 insert into Productos
 values(default,1,'toby.png','Toby','Toby tiene 3 años y es muy amigable y sociable. Está buscando un hogar con mucho cariño.',3,'perro','masculino','sociable y amigable',default,default,default),
 	(default,1,'peter.png','Peter','Peter tiene 12 años y es una cruza con Beagle. Se lleva muy bien con los niños.',12,'perro','masculino','leal y amistoso',default,default,default),
-	(default,2,'luna.png','Luna','Reservada pero cariñosa, buscando un lugar tranquilo para compartir afecto.',3,'gato','femenino','sensible y paciente',default,default,default),
+	(default,1,'luna.png','Luna','Reservada pero cariñosa, buscando un lugar tranquilo para compartir afecto.',3,'gato','femenino','sensible y paciente',default,default,default),
 	(default, 2, 'oliver.png', 'Oliver', 'Curioso observador que busca un hogar donde pueda explorar sin límites.', 12, 'gato', 'masculino', 'independiente y curioso', default, default, default),
 	(default, 2, 'simba.png', 'Simba', 'Ideal si necesitas un amigo tranquilo y relajado que disfruta de largas siestas a tu lado.', 6, 'gato', 'masculino', 'reservado y tranquilo', default, default, default),
 	(default, 1, 'molly.png', 'Molly', 'Energética y amigable, Molly está lista para acompañarte en todas tus aventuras. ', 1, 'perro', 'femenino', 'alegre y juguetona', default, default, default),

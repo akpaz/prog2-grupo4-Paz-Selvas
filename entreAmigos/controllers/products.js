@@ -6,8 +6,12 @@ const db = require('../database/models');
 
 const productController = {
     index: function (req, res) {
-        /* Tratando de traer datos de la db
-        db.Producto.findAll()
+        // Tratando de traer datos de la db
+        db.Producto.findAll({
+            include: [
+                {association: 'usuarios'}
+            ]
+        })
         .then(function(productos) {
             if(productos !== undefined){
                 return res.send(productos);
@@ -18,8 +22,7 @@ const productController = {
         .catch(function(e) {
             console.log(e);
         })
-        */
-        res.render('index', { productos: productos })
+        
     },
     detalleProducto: function (req, res) {
         let idProducto = req.params.idProducto;

@@ -50,11 +50,15 @@ module.exports = function(sequelize, dataTypes) {
 
     let Producto = sequelize.define(alias, cols, config);
     
-    /* Producto.associate = function(models){
-        Producto.hasMany(models.Usuario,{
+    Producto.associate = function(models){
+        Producto.belongsTo(models.Usuario,{
             as:"usuarios",
             foreignKey:"idUsuarioPropietario"
-        })
-    } */
+        });
+        Producto.hasMany(models.Comentario,{
+            as: "comentarios",
+            foreignKey: "comentario_id"
+        });
+    } 
     return Producto;
 };
