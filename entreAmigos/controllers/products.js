@@ -24,10 +24,14 @@ const productController = {
     },
     detalleProducto: function (req, res) {
         let idProducto = req.params.idProducto;
-        let producto = null;
-        db.Producto.findByPk(idProducto)
+        db.Producto.findByPk(idProducto, {
+            include: [
+                {association: 'comentarios',
+                association : 'usuarios'}
+            ]
+        })
         .then(function (producto) {
-            return res.send(producto);
+            //return res.send(producto);
             return res.render('product', { producto: producto });
         })
     },
