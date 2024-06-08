@@ -19,18 +19,6 @@ let loginValidations = [
         }),
     body('password')
         .notEmpty().withMessage('Por favor, complete el campo contraseña.')
-        .custom(function (value) {
-            // validar que la contraseña exista en la base de datos y sea la correspondiente al email
-
-            return db.Usuario.findOne({
-                where: { contrasena: value }
-            })
-                .then(function (user) {
-                    if (!user) {
-                        throw new Error("La contraseña es incorrecta, intente nuevamente!")
-                    }
-                })
-        })
 ];
 
 module.exports = loginValidations;

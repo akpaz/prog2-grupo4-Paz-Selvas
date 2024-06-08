@@ -38,7 +38,7 @@ const usuariosController = {
         if (req.session.user !== undefined) {
             return res.redirect('/');
         } else{
-            res.render('login');
+            res.render('login',);
         }
     },
     processLogin: function(req, res) {
@@ -58,7 +58,11 @@ const usuariosController = {
                 if(req.body.recordar !== undefined){
                     res.cookie('usuarioGuardado', req.session.user, {maxAge: 1000*60*1000000})
                 }
-                return res.redirect('/');
+                if (bcrypt.compareSync(req.password, usuarioLogueado.password)) {
+                    return res.redirect('/');
+                } else{
+                    return res.render('login',{errors: errors.mapped(), old: req.body})
+                }
             })
             .catch(function (e) {
                 console.log(e);
