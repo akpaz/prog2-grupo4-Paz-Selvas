@@ -32,15 +32,11 @@ app.use(session({
 }));
 
 app.use(function(req, res, next) {
-  res.locals.usuarioLogueado = {
-    userName: 'Camila'
-  }
-  return next();
-});
+  if(req.session.user !== undefined){
+    res.locals.user = req.session.user
 
-app.use(function(req, res, next) {
-  if(req.session.usuarioLogueado != undefined){
-    res.locals.user = req.session.usuarioLogueado
+    console.log(req.session.user);
+    console.log(res.locals.user);
   }
   return next();
 });

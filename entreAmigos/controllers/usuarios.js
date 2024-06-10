@@ -38,7 +38,7 @@ const usuariosController = {
         if (req.session.user !== undefined) {
             return res.redirect('/');
         } else{
-            res.render('login',);
+            res.render('login');
         }
     },
     processLogin: function(req, res) {
@@ -49,6 +49,7 @@ const usuariosController = {
                 where: [{email: req.body.email}]
             })
             .then(function(usuarioLogueado) {
+                // return res.send(usuarioLogueado)
                 // lo ponemos en session
                 req.session.user = {
                     email: usuarioLogueado.email,
@@ -56,11 +57,13 @@ const usuariosController = {
                     id: usuarioLogueado.id
                 }
                 console.log(user);
+                
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
                     res.cookie('usuarioGuardado', req.session.user, {maxAge: 1000*60*1000000})
                 }
-                if (bcrypt.compareSync(req.password, usuarioLogueado.password)) {
+               
+                if (bcrypt.compareSync(req.body.password, usuarioLogueado.contrasena)) {
                     return res.redirect('/');
                 } else{
                     return res.render('login',{errors: errors.mapped(), old: req.body})
@@ -87,9 +90,6 @@ const usuariosController = {
     },
     profileEdit: function (req, res) {
         return res.render('profile-edit', { usuario: usuario });
-    },
-    detallePerfil: function (req,res) {
-        return res.render('profile');
     }
 }
 
