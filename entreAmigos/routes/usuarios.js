@@ -6,9 +6,7 @@ const loginValidations = require('../middleware/loginValidations');
 const registerValidations = require('../middleware/registerValidations');
 
 
-router.get('/', usuariosController.profile);
-
-router.get('/:id', usuariosController.detallePerfil);
+router.get('/detallePerfil/:id', usuariosController.profile);
 
 router.get('/login', usuariosController.login);
 
