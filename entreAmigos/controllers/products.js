@@ -49,7 +49,7 @@ const productController = {
         })
         .then(function (producto) {
             //return res.send(producto);
-            if (req.session.user.id !== producto.id) {
+            if (req.session.user && req.session.user.id !== producto.usuarios.id) {
                 return res.redirect('/');
             } else{
                 res.render('product-edit', {producto: producto});
@@ -70,15 +70,21 @@ const productController = {
         })
         .then(function (producto) {
             //return res.send(producto);
-            if (req.session.user.id !== producto.id) {
-                return res.redirect('/');
+            if (producto !== null) {
+                if (req.session.user && req.session.user.id !== producto.usuarios.id) {
+                    return res.redirect('/');
+                } else{
+                    db.Producto.destroy({
+                        where: {
+                            id: producto.id
+                        }
+                    });
+                    return res.redirect('/');
+                }
             } else{
-                db.Producto.destroy({
-                    where: {
-                        id: producto.id
-                    }
-                });
+                return res.redirect('/');
             }
+            
         })
     }
 }
