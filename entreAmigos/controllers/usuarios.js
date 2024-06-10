@@ -55,9 +55,7 @@ const usuariosController = {
                     email: usuarioLogueado.email,
                     userName: usuarioLogueado.nombreUsuario,
                     id: usuarioLogueado.id
-                }
-                console.log(user);
-                
+                }                
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
                     res.cookie('usuarioGuardado', req.session.user, {maxAge: 1000*60*1000000})
