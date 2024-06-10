@@ -20,4 +20,6 @@ router.post('/register', registerValidations, usuariosController.store);
 
 router.post('/login', loginValidations, usuariosController.processLogin);
 
+router.post('/profile/logout', usuariosController.logout);
+
 module.exports = router;

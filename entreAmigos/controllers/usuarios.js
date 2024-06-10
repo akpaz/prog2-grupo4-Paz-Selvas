@@ -7,22 +7,6 @@ const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
 const usuariosController = {
-    index: function (req, res) {
-        // Tratando de traer datos de la db
-        db.Usuario.findAll({
-            include: [
-                {association: 'productos'}
-            ]
-        })
-        .then(function(usuarios) {
-            if(usuarios !== undefined){
-                return res.render('index', { usuarios: usuarios })
-            }
-        })
-        .catch(function(e) {
-            console.log(e);
-        })
-    },
     register: function (req, res) {
         if (req.session.user !== undefined) {
             return res.redirect('/');
@@ -71,6 +55,7 @@ const usuariosController = {
                     userName: usuarioLogueado.nombreUsuario,
                     id: usuarioLogueado.id
                 }
+                console.log(user);
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
                     res.cookie('usuarioGuardado', req.session.user, {maxAge: 1000*60*1000000})
@@ -88,6 +73,14 @@ const usuariosController = {
             // Si hay errores, volvemos al formulario con los mensajes
             return res.render('login',{errors: errors.mapped(), old: req.body});
         }   
+    },
+    logout: function(req, res){
+        // destruimos la session
+        req.session.destroy();
+        // destruimos la cookie
+        res.clearCookie('usuarioGuardado');
+        //redirigimos al usuario al inicio
+        return res.redirect('/')
     },
     profile: function (req, res) {
         return res.render('profile', { usuario: usuario, productos: productos });
