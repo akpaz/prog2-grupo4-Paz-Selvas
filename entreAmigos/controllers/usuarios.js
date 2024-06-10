@@ -7,6 +7,22 @@ const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
 const usuariosController = {
+    index: function (req, res) {
+        // Tratando de traer datos de la db
+        db.Usuario.findAll({
+            include: [
+                {association: 'productos'}
+            ]
+        })
+        .then(function(usuarios) {
+            if(usuarios !== undefined){
+                return res.render('index', { usuarios: usuarios })
+            }
+        })
+        .catch(function(e) {
+            console.log(e);
+        })
+    },
     register: function (req, res) {
         if (req.session.user !== undefined) {
             return res.redirect('/');
