@@ -56,7 +56,7 @@ const usuariosController = {
                     userName: usuarioLogueado.nombreUsuario,
                     id: usuarioLogueado.id
                 }
-                console.log(user);
+                //console.log(user);
                 
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){
