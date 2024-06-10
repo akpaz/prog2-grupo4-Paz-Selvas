@@ -52,7 +52,8 @@ const usuariosController = {
                 // lo ponemos en session
                 req.session.user = {
                     email: usuarioLogueado.email,
-                    userName: usuarioLogueado.nombreUsuario
+                    userName: usuarioLogueado.nombreUsuario,
+                    id: usuarioLogueado.id
                 }
                 //Preguntar si el usuario tildó el checkbox para recordarlo
                 if(req.body.recordar !== undefined){

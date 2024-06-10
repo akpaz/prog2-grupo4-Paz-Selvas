@@ -364,6 +364,17 @@ hr {
   line-height: 1.5;
 }
 
+.accionesProducto{
+  font-family: inherit;
+  border: none;
+  background-color: var(--light-gray);
+  font-size: 18px;
+}
+
+.accionesProducto:hover {
+  color: var(--gray);
+}
+
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;

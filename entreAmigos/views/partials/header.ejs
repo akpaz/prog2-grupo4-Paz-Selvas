@@ -37,9 +37,15 @@
                 <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
             </ul>
 
+            <% if(locals.user != undefined) { %>
+                <ul>
+                    <h1>Bienvenido/a <%= locals.user.userName %></h1>
+                </ul>
+            <% } %>
+
             <ul class="right-navbar">
-                <% if(locals.user !=undefined) { %>
-                    <li><a href="profile.html">
+                <% if(locals.user != undefined) { %>
+                    <li><a href="/profile/<%= locals.user.id %>">
                             <%= locals.user.userName %> > <i class="fas fa-user"></i>
                         </a>
                     </li>
@@ -61,6 +67,7 @@
                         <% } %>
             </ul>
         </nav>
+        
     </div>
 </header>
 <!-- /Header -->

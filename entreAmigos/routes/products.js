@@ -13,4 +13,7 @@ router.get('/product-edit/:idProducto', productsController.editProduct);
 
 router.get('/busqueda-products/:busqueda', productsController.busqueda);
 
+router.post('/borrarProducto/:idProducto', productsController.borrar);
+
+
 module.exports = router;

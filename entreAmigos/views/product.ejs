@@ -16,7 +16,13 @@
 						<%= producto.nombre %>
 					</h2>
 					<p class="product-detail-description">
-						<a href="/product-edit/<%= producto.id %>">Editar</a>
+						<a href="/product-edit/<%= producto.id %>" class="accionesProducto">Editar</a>
+					</p class="product-detail-description">
+						<form action="/" method="post">
+							<button class="accionesProducto">Borrar</button>
+						</form>
+					<p>
+
 					</p>
 				</div>
 				<div class="product-detail">

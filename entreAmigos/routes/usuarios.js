@@ -12,7 +12,7 @@ router.get('/:id', usuariosController.detallePerfil);
 
 router.get('/login', usuariosController.login);
 
-router.get('/edit', usuariosController.profileEdit);
+router.get('/edit/:idUsuario', usuariosController.profileEdit);
 
 router.get('/register', usuariosController.register);
 

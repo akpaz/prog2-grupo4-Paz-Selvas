@@ -40,16 +40,46 @@ const productController = {
     },
     editProduct: function (req, res) {
         let idProducto = req.params.idProducto;
-        let producto = null;
-        for (let i = 0; i < productos.length; i++) {
-            if (idProducto == productos[i].id) {
-                producto = productos[i];
-            };
-        };
-        res.render('product-edit', { usuario: usuario, producto: producto })
+
+        db.Producto.findByPk(idProducto, {
+            include: [
+                {association: 'comentarios',
+                association : 'usuarios'}
+            ]
+        })
+        .then(function (producto) {
+            //return res.send(producto);
+            if (req.session.user.id !== producto.id) {
+                return res.redirect('/');
+            } else{
+                res.render('product-edit', {producto: producto});
+            }
+        })
     },
     busqueda: function (req, res) {
         res.render('search-results');
+    },
+    borrar: function (req, res) {
+        let idProducto = req.params.idProducto;
+
+        db.Producto.findByPk(idProducto, {
+            include: [
+                {association: 'comentarios',
+                association : 'usuarios'}
+            ]
+        })
+        .then(function (producto) {
+            //return res.send(producto);
+            if (req.session.user.id !== producto.id) {
+                return res.redirect('/');
+            } else{
+                db.Producto.destroy({
+                    where: {
+                        id: producto.id
+                    }
+                });
+            }
+        })
     }
 }
 
