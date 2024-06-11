@@ -3,6 +3,6 @@ const router = express.Router();
 
 const comentariosController = require('../controllers/comentarios');
 
-router.post('/nuevoComentario', comentariosController.store);
+router.post('/nuevoComentario/:idProducto', comentariosController.store);
 
 module.exports = router;

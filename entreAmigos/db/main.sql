@@ -36,6 +36,7 @@ create table Productos (
 
 create table Comentarios (
 	id int unsigned primary key auto_increment,
+	contenido varchar(100),
 	idProducto int unsigned,
     idUsuario int unsigned,
     createdAt timestamp default current_timestamp,
