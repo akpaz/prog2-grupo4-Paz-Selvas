@@ -13,10 +13,8 @@ const productController = {
             ]
         })
         .then(function(productos) {
-            if(productos !== undefined){
-                // return res.send(productos);
-                return res.render('index', { productos: productos })
-            }
+            // return res.send(productos);
+            return res.render('index', { productos: productos })
         })
         .catch(function(e) {
             console.log(e);
@@ -49,10 +47,10 @@ const productController = {
         })
         .then(function (producto) {
             //return res.send(producto);
-            if (req.session.user && req.session.user.id !== producto.usuarios.id) {
-                return res.redirect('/');
+            if (req.session.user && req.session.user.id === producto.usuarios.id) {
+                return res.render('product-edit', {producto: producto});
             } else{
-                res.render('product-edit', {producto: producto});
+                return res.redirect('/');
             }
         })
     },
@@ -71,16 +69,14 @@ const productController = {
         .then(function (producto) {
             //return res.send(producto);
             if (producto !== null) {
-                if (req.session.user && req.session.user.id !== producto.usuarios.id) {
-                    return res.redirect('/');
-                } else{
+                if (req.session.user && req.session.user.id === producto.usuarios.id) {
                     db.Producto.destroy({
                         where: {
                             id: producto.id
                         }
                     });
-                    return res.redirect('/');
-                }
+                } 
+                return res.redirect('/');
             } else{
                 return res.redirect('/');
             }
