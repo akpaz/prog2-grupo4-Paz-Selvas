@@ -34,7 +34,9 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
+                <% if(locals.user != undefined) { %>
+                    <li><a href="/product-add">Cargar productos</a></li>
+                <% } %>
             </ul>
 
             <% if(locals.user != undefined) { %>

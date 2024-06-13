@@ -14,13 +14,22 @@ let loginValidations = [
                 .then(function (user) {
                     if (!user) {
                         throw new Error("El email no se encuentra registrado.")
-                    } else if (!bcrypt.compareSync(req.body.password, user.contrasena)){
-                        throw new Error("La contraseña es incorrectra.")
-                    }
+                    } 
                 })
         }),
     body('password')
         .notEmpty().withMessage('Por favor, complete el campo contraseña.')
+        // validamos que la contraseña sea correcta
+        .custom(function (value, { req }) {
+            return db.Usuario.findOne({
+                where: {email: req.body.email}
+            })
+                .then(function (user) {
+                    if(user && !bcrypt.compareSync(value, user.contrasena)){
+                        throw new Error("La contraseña es incorrecta.")
+                    }
+                })
+        })
 ];
 
 module.exports = loginValidations;
