@@ -24,11 +24,12 @@ const productController = {
         db.Producto.findByPk(idProducto, {
             include: [
                 {association: 'comentarios',
-                association : 'usuarios'}
+                    include: [{association: 'usuarios'}]},
+                {association : 'usuarios'}
             ]
         })
         .then(function (producto) {
-            //return res.send(producto);
+            return res.send(producto);
             return res.render('product', { producto: producto });
         })
     },
