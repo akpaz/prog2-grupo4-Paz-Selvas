@@ -40,18 +40,18 @@
 							</article>
 							<div class="col-12 col-lg-4">
 								<section class="comments">
-								<% // for (let i=0; i < producto.comentarios.length; i++) { %>
+								<% for (let i=0; i < producto.comentarios.length; i++) { %>
 									<article>
-										<img src="/images/users/<%= //producto.comentarios[i].fotoPerfil %>" alt="">
+										<img src="/images/users/<%= producto.comentarios[i].usuarios.fotoPerfil %>" alt="">
 										<div class="data">
 											<p class="user">
-												<strong> <a href="/profile">
-														<%= //producto.comentarios[i].nombreUsuario %>
+												<strong> <a href="/profile/detallePerfil/<%= producto.comentarios[i].usuarios.id %>">
+														<%= producto.comentarios[i].usuarios.nombreUsuario %>
 													</a> </strong>
-												<%= //producto.comentarios[i].texto %>
+												<%= producto.comentarios[i].contenido %>
 										</div>
 									</article>
-									<%// } %>
+									<% } %>
 							</section> 
 								<%if (locals.user) { %>
 									<form class="form" action="/comentarios/nuevoComentario/<%=producto.id%>" method="post">

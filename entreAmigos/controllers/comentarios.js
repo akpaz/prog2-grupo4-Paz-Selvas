@@ -9,7 +9,7 @@ const comentariosController = {
             idProducto: idProducto,
             idUsuario: usuario.id
         });
-        return res.redirect('/');
+        return res.redirect(`/product-detail/${idProducto}`);
     }
 };
 

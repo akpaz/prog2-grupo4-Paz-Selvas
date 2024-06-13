@@ -29,7 +29,7 @@ const productController = {
             ]
         })
         .then(function (producto) {
-            return res.send(producto);
+            //return res.send(producto);
             return res.render('product', { producto: producto });
         })
     },
