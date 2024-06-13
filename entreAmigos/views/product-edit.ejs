@@ -15,18 +15,30 @@
 				<h2 class="products-title">Editar producto <%= producto.nombre %> </h2>
 			</div>
 			<!-- Formulario para agregar producto -->
-			<form action="/" method="post">
+			<form action="/editarProducto/<%= producto.id %>" method="post">
 				<div class="divs-form">
+					<% if(locals.errors && errors.imgProducto){ %>
+						<p><%= errors.imgProducto.msg %></p>
+					<% } %>
 					<label for="imgProducto" class="form-label">Ingrese la nueva imagen del producto: </label>
-					<input type="file" name="imgProducto" id="imgProducto" class="form-input">
+					<input type="text" name="imgProducto" id="imgProducto" class="form-input" 
+					value= "<%= locals.old !== undefined && old.imgProducto ? old.imgProducto : '' %>">
 				</div>
 				<div class="divs-form">
+					<% if(locals.errors && errors.nombreProducto){ %>
+						<p><%= errors.nombreProducto.msg %></p>
+					<% } %>
 					<label for="nombreProducto" class="form-label">Ingrese el nuevo nombre del producto: </label>
-					<input type="text" name="nombreProducto" id="nombreProducto" class="form-input">
+					<input type="text" name="nombreProducto" id="nombreProducto" class="form-input" 
+					value= "<%= locals.old !== undefined && old.nombreProducto ? old.nombreProducto : '' %>">
 				</div>
 				<div class="divs-form">
+					<% if(locals.errors && errors.descripcionProducto){ %>
+						<p><%= errors.descripcionProducto.msg %></p>
+					<% } %>
 					<label for="descripcionProducto" class="form-label">Ingrese la nueva descripción del producto: </label>
-					<textarea name="descripcionProducto" id="descripcionProducto" cols="15" rows="5" class="form-input"></textarea>
+					<textarea name="descripcionProducto" id="descripcionProducto" cols="15" rows="5" class="form-input" 
+					value= "<%= locals.old !== undefined && old.descripcionProducto ? old.descripcionProducto : '' %>"></textarea>
 				</div>
 				<div>
 					<button type="submit" class="button-form">Editar producto</button>

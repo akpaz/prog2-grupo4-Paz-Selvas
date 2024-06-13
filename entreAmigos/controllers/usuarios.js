@@ -38,7 +38,7 @@ const usuariosController = {
         if (req.session.user !== undefined) {
             return res.redirect('/');
         } else {
-            res.render('login');
+            return res.render('login');
         }
     },
     processLogin: function (req, res) {
@@ -59,16 +59,12 @@ const usuariosController = {
                     }
                     //console.log(user);
 
-                    //Preguntar si el usuario tildó el checkbox para recordarlo
+                    //Preguntar si el usuario tildó el checkbox para recordarlo --> cookies
                     if (req.body.recordar !== undefined) {
                         res.cookie('usuarioGuardado', req.session.user, { maxAge: 1000 * 60 * 1000000 });
                     };
 
-                    if (bcrypt.compareSync(req.body.password, usuarioLogueado.contrasena)) {
-                        return res.redirect('/');
-                    } else {
-                        return res.render('login', { errors: errors.mapped(), old: req.body })
-                    };
+                    return res.redirect('/');
                 })
                 .catch(function (e) {
                     console.log(e);
