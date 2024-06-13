@@ -6,10 +6,11 @@ const db = require('../database/models');
 
 const productController = {
     index: function (req, res) {
-        // Tratando de traer datos de la db
+        // Traemos los datos de la db
         db.Producto.findAll({
             include: [
-                {association: 'usuarios'}
+                {association: 'usuarios'},
+                {association: 'comentarios'}
             ]
         })
         .then(function(productos) {

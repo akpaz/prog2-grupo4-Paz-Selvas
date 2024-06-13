@@ -31,6 +31,7 @@
 							<h2 class="nombresIndex"><%= productos[i].nombre %></h2>
 							<!-- <p><%= // productos[i].descripcion %></p> -->
 							<p>Usuario: <a href="/profile/detallePerfil/<%= productos[i].usuarios.id %>"><%= productos[i].usuarios.nombreUsuario %></a></p>
+							<p>Comentarios: <%= productos[i].comentarios.length %></p>
 						</article>
 					</a>
 				</section>
