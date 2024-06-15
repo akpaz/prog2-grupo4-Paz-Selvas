@@ -67,7 +67,25 @@ const productController = {
         })
     },
     busqueda: function (req, res) {
-        res.render('search-results');
+        let busquedaUsuario = req.body.search
+
+        db.Producto.findAll({
+            where: [
+                {nombre: {[Op.like]: '%busquedaUsuario%'}},
+                {descripcion:{[Op.like]: '%busquedaUsuario%'}},
+                {edad: {[Op.like]: '%busquedaUsuario%'}},
+                {especie: {[Op.like]: '%busquedaUsuario%'}},
+                {sexo: {[Op.like]: '%busquedaUsuario%'}},
+                {personalidad: {[Op.like]: '%busquedaUsuario%'}}
+            ]
+        })
+        .then(function(producto){
+             //res.render('search-results');
+            res.render('busqueda-products', {producto:producto});
+        })
+        .catch(function(e){
+            console.log(e);
+        })
     },
     borrar: function (req, res) {
         let idProducto = req.params.idProducto;
