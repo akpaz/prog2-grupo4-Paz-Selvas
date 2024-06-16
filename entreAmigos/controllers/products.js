@@ -1,7 +1,7 @@
 const datosProductos = require('../db/main');
 const usuario = datosProductos.usuario;
 const { validationResult } = require('express-validator');
-
+const { Op } = require('sequelize');
 const db = require('../database/models');
 
 const productController = {
@@ -82,6 +82,7 @@ const productController = {
         .then(function(producto){
              //res.render('search-results');
             res.render('busqueda-products', {producto:producto});
+            return res.redirect('busqueda-products');
         })
         .catch(function(e){
             console.log(e);
