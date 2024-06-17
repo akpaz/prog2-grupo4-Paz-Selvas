@@ -22,6 +22,6 @@ router.post('/editarProducto/:idProducto', productValidations, productsControlle
 
 router.post('/crearProducto/:idProducto', productsController.processAdd);
 
-router.post('/add-product', addProductValidation);
+router.post('/add-product', addProductValidation, productsController.processAdd);
 
 module.exports = router;
