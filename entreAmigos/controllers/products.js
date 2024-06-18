@@ -40,19 +40,20 @@ const productController = {
     },
     addProduct: function (req, res) {
         if (req.session.user !== undefined) {
-            //return res.render('product-add');
             db.Producto.create({
                 imagen: req.body.imgProducto,
                 nombre: req.body.nombreProducto,
-                descripcion: req.body.descripcionProducto 
+                descripcion: req.body.descripcionProducto,
+                edad: req.body.edadproducto,
+                especie: req.body.especieProducto,
+                sexo: req.body.sexo,
+                personalidad: req.body.personalidadProducto
+
             })
-            .then(function (producto) {
-                res.redirect('/');
-            })
-            .catch(function (e) {
-                console.log(e);
-            })
-            }
+            return res.render('product-add');
+        } else {
+            return res.redirect('/');
+        }
     },
     editProduct: function (req, res) {
         let idProducto = req.params.idProducto;
@@ -161,37 +162,7 @@ const productController = {
         }        
     },
     processAdd: function (req, res) {
-        let idProducto = req.params.idProducto;
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()){
-            // No hay errores, avanzamos con el código normal
-            db.Producto.create({
-                imagen: req.body.imgProducto,
-                nombre: req.body.nombreProducto,
-                descripcion: req.body.descripcionProducto
-            },
-            {
-                where: {
-                    id: idProducto
-                }
-            });
-            return res.redirect('/');
-        } else{
-            // si hay errores, volvemos al form mostrando los errores
-            db.Producto.findByPk(idProducto, {
-                include: [
-                    {association : 'usuarios'}
-                ]
-            })
-            .then(function (producto) {
-                //return res.send(errors.mapped())
-                return res.render('product-add', { producto: producto, errors: errors.mapped(), old: req.body });
-            })
-            .catch(function(e) {
-                console.log(e);
-            })
-        }        
+        
     },
 }
 

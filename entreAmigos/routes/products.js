@@ -21,6 +21,8 @@ router.post('/editarProducto/:idProducto', productValidations, productsControlle
 
 router.post('/crearProducto/:idProducto', productsController.processAdd);
 
-router.post('/add-product', productValidations, productsController.processAdd);
+//Cuando termine de hacer el metodo processAdd cambnio la ruta de validacion
+router.post('/product-add', productValidations, productsController.processAdd);
+
 
 module.exports = router;
