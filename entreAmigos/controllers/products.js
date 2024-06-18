@@ -40,10 +40,19 @@ const productController = {
     },
     addProduct: function (req, res) {
         if (req.session.user !== undefined) {
-            return res.render('product-add');
-        } else {
-            return res.redirect('/');
-        }
+            //return res.render('product-add');
+            db.Producto.create({
+                imagen: req.body.imgProducto,
+                nombre: req.body.nombreProducto,
+                descripcion: req.body.descripcionProducto 
+            })
+            .then(function (producto) {
+                res.redirect('/');
+            })
+            .catch(function (e) {
+                console.log(e);
+            })
+            }
     },
     editProduct: function (req, res) {
         let idProducto = req.params.idProducto;
@@ -152,6 +161,7 @@ const productController = {
         }        
     },
     processAdd: function (req, res) {
+        let idProducto = req.params.idProducto;
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
@@ -160,16 +170,29 @@ const productController = {
                 imagen: req.body.imgProducto,
                 nombre: req.body.nombreProducto,
                 descripcion: req.body.descripcionProducto
+            },
+            {
+                where: {
+                    id: idProducto
+                }
+            });
+            return res.redirect('/');
+        } else{
+            // si hay errores, volvemos al form mostrando los errores
+            db.Producto.findByPk(idProducto, {
+                include: [
+                    {association : 'usuarios'}
+                ]
             })
             .then(function (producto) {
                 //return res.send(errors.mapped())
-                return res.render('add-product', { producto: producto, errors: errors.mapped(), old: req.body });
+                return res.render('product-add', { producto: producto, errors: errors.mapped(), old: req.body });
             })
             .catch(function(e) {
                 console.log(e);
             })
         }        
-    }
+    },
 }
 
 module.exports = productController;

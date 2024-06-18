@@ -41,6 +41,7 @@ app.use(function(req, res, next) {
   return next();
 });
 
+
 // Rutas
 app.use('/users', usersRouter);
 app.use('/', productsRouter);
