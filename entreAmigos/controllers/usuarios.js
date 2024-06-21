@@ -83,11 +83,49 @@ const usuariosController = {
         return res.redirect('/')
     },
     profile: function (req, res) {
-        return res.render('profile', { usuario: usuario, productos: productos });
+        let idUsuario = req.params.id
+        //Buscamos los datos de la db
+        db.Usuario.findByPk(idUsuario,{
+            include: [{association: 'productos', order: [['createdAt', 'DESC']], include: [{association: 'comentarios'}]}, 
+        {association: 'comentarios'}]
+        })
+        .then(function (profile) {
+            return res.render('profile', { usuario: profile});
+        })
+        .catch(function (e) {
+            console.log(e);
+        })
+        //return res.render('profile', { usuario: usuario, productos: productos });
     },
     profileEdit: function (req, res) {
+        let idUsuario = req.params.idUsuario;
         return res.render('profile-edit', { usuario: usuario });
-    }
+    },
+    editProcess: function(req, res) {
+        let idUsuario = req.params.idUsuario;
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            // No hay errores, avanzamos con el código normal
+            db.Usuario.update({
+                email: req.body.email,
+                nombreUsuario: req.body.nombre,
+                contrasena: req.body.password,
+                fechaDeNacimiento: req.body.nacimiento,
+                dni: req.body.dni,
+                fotoPerfil: req.body.fotoPerfil
+            })
+            .then(function (perfilEditado) {
+                return res.redirect('/');
+            })
+            .catch(function (e) {
+                console.log(e);
+            })
+        } else{
+            return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
+            } 
+        }
 }
+
 
 module.exports = usuariosController;

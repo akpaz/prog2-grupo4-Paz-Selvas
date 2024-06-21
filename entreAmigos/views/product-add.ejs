@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-	
+
 <!-- Include Head -->
 <%- include('./partials/head') %>
 
@@ -15,32 +15,53 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Formulario para agregar producto -->
-			<form action="/" method="post">
+			<form action="/product-add" method="post">
 				<div class="divs-form">
+					<%if (locals.errors && errors.imgProducto) { %>
+						<p><%= errors.imgProducto.msg %></p>
+					<% } %>
 					<label for="imgProducto" class="form-label">Ingrese una imagen del producto: </label>
-					<input type="text" name="imgProducto" id="imgProducto" class="form-input">
+					<input type="text" name="imgProducto" id="imgProducto" class="form-input" >
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.nombreProducto) { %>
+						<p><%= errors.nombreProducto.msg %></p>
+					<% } %>
 					<label for="nombreProducto" class="form-label">Ingrese el nombre del producto: </label>
-					<input type="text" name="nombreProducto" id="nombreProducto" class="form-input">
+					<input type="text" name="nombreProducto" id="nombreProducto" class="form-input" >
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.descripcionProducto) { %>
+						<p><%= errors.descripcionProducto.msg %></p>
+					<% } %>
 					<label for="descripcionProducto" class="form-label">Ingrese la descripción del producto: </label>
 					<textarea name="descripcionProducto" id="descripcionProducto" cols="15" rows="5" class="form-input"></textarea>
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.edadProducto) { %>
+						<p><%= errors.edadProducto.msg %></p>
+					<% } %>
 					<label for="edadProducto" class="form-label">Ingrese la edad: </label>
-					<input type="number" name="edadProducto" id="edadProducto" class="form-input">
+					<input type="number" name="edadProducto" id="edadProducto" class="form-input" >
 				</div>
 				<div class="divs-form">
-					<label for="especiaProducto" class="form-label">Ingrese la especie: </label>
+						<%if (locals.errors && errors.especieProducto) { %>
+							<p><%= errors.especieProducto.msg %></p>
+						<% } %>
+					<label for="especieProducto" class="form-label">Ingrese la especie: </label>
 					<input type="text" name="especieProducto" id="especieProducto" class="form-input">
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.sexoProducto) { %>
+						<p><%= errors.sexoProducto.msg %></p>
+					<% } %>
 					<label for="sexoProducto" class="form-label">Ingrese el sexo: </label>
-					<input type="text" name="sexoProducto" id="sexoProducto" class="form-input">
+					<input type="text" name="sexoProducto" id="sexoProducto" class="form-input" >
 				</div>
 				<div class="divs-form">
+					<%if (locals.errors && errors.personalidadProducto) { %>
+						<p><%= errors.personalidadProducto.msg %></p>
+					<% } %>
 					<label for="personalidadProducto" class="form-label">Ingrese una descripción de la personalidad: </label>
 					<input type="text" name="personalidadProducto" id="personalidadProducto" class="form-input">
 				</div>

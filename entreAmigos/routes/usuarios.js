@@ -4,13 +4,14 @@ const router = express.Router();
 const usuariosController = require('../controllers/usuarios');
 const loginValidations = require('../middleware/loginValidations');
 const registerValidations = require('../middleware/registerValidations');
+const editProfileValidations = require('../middleware/editProfileValidations');
 
 
 router.get('/detallePerfil/:id', usuariosController.profile);
 
 router.get('/login', usuariosController.login);
 
-router.get('/edit/:idUsuario', usuariosController.profileEdit);
+router.get('/profile-edit', usuariosController.profileEdit);
 
 router.get('/register', usuariosController.register);
 

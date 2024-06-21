@@ -40,17 +40,8 @@ const productController = {
     },
     addProduct: function (req, res) {
         if (req.session.user !== undefined) {
-            db.Producto.create({
-                imagen: req.body.imgProducto,
-                nombre: req.body.nombreProducto,
-                descripcion: req.body.descripcionProducto,
-                edad: req.body.edadproducto,
-                especie: req.body.especieProducto,
-                sexo: req.body.sexo,
-                personalidad: req.body.personalidadProducto
-
-            })
-            return res.render('product-add');
+            // Renderizamos a las vistas de product-add. Recibe el objeto errors con un array vacion para usar el el for de
+            return res.render('product-add', {errors: []});
         } else {
             return res.redirect('/');
         }
@@ -77,22 +68,20 @@ const productController = {
         })
     },
     busqueda: function (req, res) {
-        let busquedaUsuario = req.body.search
-
+        let busquedaUsuario = req.query.search
+      
         db.Producto.findAll({
-            where: [
-                {nombre: {[Op.like]: '%busquedaUsuario%'}},
-                {descripcion:{[Op.like]: '%busquedaUsuario%'}},
-                {edad: {[Op.like]: '%busquedaUsuario%'}},
-                {especie: {[Op.like]: '%busquedaUsuario%'}},
-                {sexo: {[Op.like]: '%busquedaUsuario%'}},
-                {personalidad: {[Op.like]: '%busquedaUsuario%'}}
-            ]
+            where: {
+                [Op.or]:
+                [{nombre: {[Op.like]: `%${busquedaUsuario}%`}},
+                {descripcion:{[Op.like]: `%${busquedaUsuario}%`}}
+            ]},
+            include: [{association: 'usuarios'},
+                        {association: 'comentarios'}],
+            order: [['createdAt', 'DESC']]
         })
         .then(function(producto){
-             //res.render('search-results');
             res.render('busqueda-products', {producto:producto});
-            res.redirect('/busqueda-products');
         })
         .catch(function(e){
             console.log(e);
@@ -162,8 +151,30 @@ const productController = {
         }        
     },
     processAdd: function (req, res) {
-        
-    },
+        let errors = validationResult(req);
+        let idUsuario = req.session.user.id;
+        if (errors.isEmpty()) {
+            db.Producto.create({
+                // Creamos el nuevo producto y requerimos la informacion que se introduce en los formularios. Tambien requerimos el id para guardarlo en la base de datos.
+                idUsuarioPropietario: idUsuario,
+                imagen: req.body.imgProducto,
+                nombre: req.body.nombreProducto,
+                descripcion: req.body.descripcionProducto,
+                edad: req.body.edadproducto,
+                especie: req.body.especieProducto,
+                sexo: req.body.sexo,
+                personalidad: req.body.personalidadProducto
+            })               
+            .then(function() {
+                return res.redirect('/');
+            })
+            .catch(function(e) {
+                console.log(e);
+            });
+        } else {
+            return res.render('product-add', {errors: errors.mapped()})
+        }
+    } 
 }
 
 module.exports = productController;
