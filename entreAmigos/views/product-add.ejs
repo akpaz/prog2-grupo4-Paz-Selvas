@@ -15,7 +15,7 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Formulario para agregar producto -->
-			<form action="/product-add" method="post">
+			<form action="/profile/detallePerfil/ <%= usuario.id %>" method="post">
 				<div class="divs-form">
 					<%if (locals.errors && errors.imgProducto) { %>
 						<p><%= errors.imgProducto.msg %></p>

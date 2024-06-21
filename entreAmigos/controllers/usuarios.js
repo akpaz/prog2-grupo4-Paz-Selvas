@@ -95,28 +95,31 @@ const usuariosController = {
         .catch(function (e) {
             console.log(e);
         })
-        //return res.render('profile', { usuario: usuario, productos: productos });
     },
     profileEdit: function (req, res) {
         let idUsuario = req.params.idUsuario;
         return res.render('profile-edit', { usuario: usuario });
     },
     editProcess: function(req, res) {
-        let idUsuario = req.params.idUsuario;
+        let idUsuario = req.params.id;
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            // No hay errores, avanzamos con el código normal
             db.Usuario.update({
+                id: idUsuario,
                 email: req.body.email,
                 nombreUsuario: req.body.nombre,
                 contrasena: req.body.password,
                 fechaDeNacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 fotoPerfil: req.body.fotoPerfil
+            },
+            { where: {
+                    id: idUsuario
+                }
             })
-            .then(function (perfilEditado) {
-                return res.redirect('/');
+            .then(function () {
+            return res.redirect('/profile/detallePerfil');
             })
             .catch(function (e) {
                 console.log(e);
@@ -125,7 +128,7 @@ const usuariosController = {
             return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
             } 
         }
-}
+};
 
 
 module.exports = usuariosController;

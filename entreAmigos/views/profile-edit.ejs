@@ -16,7 +16,7 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> </h2>
 			<!--Formulario de Editar Perfil-->
-			<form action="/profile/detallePerfil<%= usuario.id %>" method="post">
+			<form action="/profile/detallePerfil" method="post">
 				<div class="divs-form">
 					<% if(locals.errors && errors.email){ %>
 						<p><%= errors.email.msg %></p>
@@ -38,15 +38,6 @@
 						<p><%= errors.password.msg %></p>
 					<% } %>
 					<label for="password" class="form-label">Editar contraseña:</label>
-					<input type="password" name="password" id="password" class="form-input"
-					value=" <%= locals.old !== undefined && old.password ? old.password : '' %>">
-					
-				</div>
-				<div class="divs-form">
-					<% if(locals.errors && errors.password){ %>
-						<p><%= errors.password.msg %></p>
-					<% } %>
-					<label for="password" class="form-label">Confirmar nueva contraseña:</label>
 					<input type="password" name="password" id="password" class="form-input"
 					value=" <%= locals.old !== undefined && old.password ? old.password : '' %>">
 					
