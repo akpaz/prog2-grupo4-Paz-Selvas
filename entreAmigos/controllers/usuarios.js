@@ -85,28 +85,30 @@ const usuariosController = {
     },
     profile: function (req, res) {
         let idUsuario = req.params.id
-        db.Usuario.findByPk(idUsuario,{
-            include: [{association: 'productos', 
-            order: [['createdAt', 'DESC']], 
-            include: [{association: 'comentarios'}]}, 
-            {association: 'comentarios'}]
+        db.Usuario.findByPk(idUsuario, {
+            include: [{
+                association: 'productos',
+                order: [['createdAt', 'DESC']],
+                include: [{ association: 'comentarios' }]
+            },
+            { association: 'comentarios' }]
         })
-        .then(function (profile) {
-            return res.render('profile', { usuario: profile});
-        })
-        .catch(function (e) {
-            console.log(e);
-        })
+            .then(function (profile) {
+                return res.render('profile', { usuario: profile });
+            })
+            .catch(function (e) {
+                console.log(e);
+            })
     },
     profileEdit: function (req, res) {
         let idUsuario = req.params.idUsuario;
         return res.render('profile-edit', { usuario: usuario });
     },
-    editProcess: function(req, res) {
+    editProcess: function (req, res) {
         let idUsuario = req.params.idUsuario;
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             db.Usuario.update({
                 id: idUsuario,
                 email: req.body.email,
@@ -116,20 +118,21 @@ const usuariosController = {
                 dni: req.body.dni,
                 fotoPerfil: req.body.fotoPerfil
             },
-            { where: {
-                    id: idUsuario
-                }
-            })
-            .then(function () {
-            return res.redirect('/detallePerfil');
-            })
-            .catch(function (e) {
-                console.log(e);
-            })
-        } else{
+                {
+                    where: {
+                        id: idUsuario
+                    }
+                })
+                .then(function () {
+                    return res.redirect('/detallePerfil');
+                })
+                .catch(function (e) {
+                    console.log(e);
+                })
+        } else {
             return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
-            } 
         }
+    }
 };
 
 

@@ -3,44 +3,53 @@
 <!-- Include Head -->
 <%- include('./partials/head') %>
 
-<body>
-	<!-- header -->
-	<%- include('./partials/header') %>
+	<body>
+		<!-- header -->
+		<%- include('./partials/header') %>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h1>Resultado de Busqueda...</h1>
+			<!-- Novedades -->
+			<% if (producto.length> 0) { %>
+
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Resultado de búsqueda...</h2>
+					</div>
+				</div>
+				<!-- Show the "ultimos" products -->
+				<% for (let i=0; i < producto.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product-detail/<%= producto[i].id %>">
+								<figure class="product-box_image">
+									<img src="/images/products/<%= producto[i].imagen %>"
+										alt="imagen de <%= producto[i].nombre %>" class="imgMascota">
+								</figure>
+								<article class="product-box_data">
+									<h2 class="nombresIndex">
+										<%= producto[i].nombre %>
+									</h2>
+									<!-- <p><%= // productos[i].descripcion %></p> -->
+									<p>Usuario: <a href="/profile/detallePerfil/<%= producto[i].usuarios.id %>">
+											<%= producto[i].usuarios.nombreUsuario %>
+										</a></p>
+									<p>Comentarios: <%= producto[i].comentarios.length %>
+									</p>
+								</article>
+							</a>
+						</section>
+					</div>
 			</div>
-			<% if (producto.length > 0) { %>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<% for (let i = 0; i < producto.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product-detail/<%= producto[i].id %>">
-						<figure class="product-box_image">
-							<img src="/images/products/<%= producto[i].imagen %>" alt="imagen de <%= producto[i].nombre %>" class="imgMascota">
-						</figure>
-						<article class="product-box_data">
-							<h2 class="nombresIndex"><%= producto[i].nombre %></h2>
-							<!-- <p><%= // productos[i].descripcion %></p> -->
-							<p>Usuario: <a href="/profile/detallePerfil/<%= producto[i].usuarios.id %>"><%= producto[i].usuarios.nombreUsuario %></a></p>
-							<p>Comentarios: <%= producto[i].comentarios.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>		
-
+				<%}%>
+			<% } else { %>
+				<div class="col-12">
+					<h2 class="products-title">No se encontraron resultados para su búsqueda...</h2>
+				</div>							
 			<%}%>
-			<%} else{%> 
-				<h2>No se encontraron resultados para su búsqueda</h2>
-			<%}%>
-			
-	<!-- footer -->
-	<%- include('./partials/footer') %>
 
-</body>
+		<!-- footer -->
+		<%- include('./partials/footer') %>
+
+	</body>
 
 </html>
