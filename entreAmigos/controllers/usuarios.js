@@ -119,7 +119,7 @@ const usuariosController = {
                 }
             })
             .then(function () {
-            return res.redirect('/profile/detallePerfil');
+            return res.redirect('/detallePerfil');
             })
             .catch(function (e) {
                 console.log(e);
