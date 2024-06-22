@@ -85,22 +85,25 @@ const usuariosController = {
     profile: function (req, res) {
         if (req.session.user != undefined) {
             let idUsuario = req.session.user.id;
-        
-        db.Usuario.findByPk(idUsuario,{
-            include: [{association: 'productos', 
-            order: [['createdAt', 'DESC']], 
-            include: [{association: 'comentarios'}]}, 
-            {association: 'comentarios'}]
-        })
-        .then(function (profile) {
-            return res.render('profile', { usuario: profile});
-        })
-        .catch(function (e) {
-            console.log(e);
-        })} else{
+
+            db.Usuario.findByPk(idUsuario, {
+                include: [{
+                    association: 'productos',
+                    order: [['createdAt', 'DESC']],
+                    include: [{ association: 'comentarios' }]
+                },
+                { association: 'comentarios' }]
+            })
+                .then(function (profile) {
+                    return res.render('profile', { usuario: profile });
+                })
+                .catch(function (e) {
+                    console.log(e);
+                })
+        } else {
             return res.redirect('/')
         }
-        let idUsuario = req.params.id
+        let idUsuario = req.params.id;
         db.Usuario.findByPk(idUsuario, {
             include: [{
                 association: 'productos',
@@ -109,43 +112,79 @@ const usuariosController = {
             },
             { association: 'comentarios' }]
         })
-            .then(function (profile) {
-                return res.render('profile', { usuario: profile });
+            .then(function (usuario) {
+                return res.render('profile', { usuario: usuario });
             })
             .catch(function (e) {
                 console.log(e);
             })
     },
     profileEdit: function (req, res) {
-        let idUsuario = req.params.idUsuario;
-        return res.render('profile-edit', { usuario: usuario });
-    },
-    editProcess: function (req, res) {
-        let errors = validationResult(req);
+        let idUsuario = req.params.id;
 
-        if(errors.isEmpty()){
-            db.Usuario.update({
-                id: idUsuario,
-                email: req.body.email,
-                nombreUsuario: req.body.nombre,
-                contrasena: req.body.password,
-                fechaDeNacimiento: req.body.nacimiento,
-                dni: req.body.dni,
-                fotoPerfil: req.body.fotoPerfil
-            },
-            { where: {
-                    id: idUsuario
+        db.Usuario.findByPk(idUsuario, {
+            include: [
+                { association: 'comentarios' },
+                { association: 'productos' }
+            ]
+        })
+            .then(function (usuario) {
+                //return res.send(usuario);
+                if (req.session.user && req.session.user.id === usuario.id) {
+                    return res.render('profile-edit', { usuario: usuario });
+                } else {
+                    return res.redirect('/');
                 }
-            })
-            .then(function () {
-            return res.redirect('/detallePerfil');
             })
             .catch(function (e) {
                 console.log(e);
             })
-        } else{
-            return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
-            } 
+    },
+    editProcess: function (req, res) {
+        let errors = validationResult(req);
+
+        let idUsuario = req.session.user.id;
+
+        if (errors.isEmpty()) {
+            db.Usuario.update({
+                email: req.body.email,
+                nombreUsuario: req.body.nombre,
+                fechaDeNacimiento: req.body.nacimiento,
+                dni: req.body.dni,
+                fotoPerfil: req.body.fotoPerfil
+            },
+                {
+                    where: {
+                        id: idUsuario
+                    }
+                })
+
+            if (req.body.password !== null) {
+                db.Usuario.update({
+                    contrasena: req.body.password,
+                },
+                    {
+                        where: {
+                            id: idUsuario
+                        }
+                    })
+            }
+            
+            return res.redirect('/');
+        } else {
+            db.Usuario.findByPk(idUsuario, {
+                include: [
+                    { association: 'comentarios' },
+                    { association: 'productos' }
+                ]
+            })
+                .then(function (usuario) {
+                    return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
+                })
+                .catch(function (e) {
+                    console.log(e);
+                })
+        }
     }
 };
 

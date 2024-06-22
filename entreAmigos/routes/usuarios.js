@@ -8,6 +8,7 @@ const registerValidations = require('../middleware/registerValidations');
 const editProfileValidations = require('../middleware/editProfileValidations');
 
 
+
 router.get('/detallePerfil/:id', usuariosController.profile);
 
 router.get('/login', usuariosController.login);
