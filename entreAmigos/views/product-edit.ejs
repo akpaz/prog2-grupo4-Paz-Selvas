@@ -17,31 +17,63 @@
 			<!-- Formulario para agregar producto -->
 			<form action="/editarProducto/<%= producto.id %>" method="post">
 				<div class="divs-form">
-					<% if(locals.errors && errors.imgProducto){ %>
+					<%if (locals.errors && errors.imgProducto) { %>
 						<p><%= errors.imgProducto.msg %></p>
 					<% } %>
-					<label for="imgProducto" class="form-label">Ingrese la nueva imagen del producto: </label>
+					<label for="imgProducto" class="form-label">Ingrese una imagen del producto: </label>
 					<input type="text" name="imgProducto" id="imgProducto" class="form-input" 
-					value= "<%= locals.old !== undefined && old.imgProducto ? old.imgProducto : '' %>">
+					value="<%= locals.old !== undefined && old.imgProducto ? old.imgProducto : '' %>">
 				</div>
 				<div class="divs-form">
-					<% if(locals.errors && errors.nombreProducto){ %>
+					<%if (locals.errors && errors.nombreProducto) { %>
 						<p><%= errors.nombreProducto.msg %></p>
 					<% } %>
-					<label for="nombreProducto" class="form-label">Ingrese el nuevo nombre del producto: </label>
+					<label for="nombreProducto" class="form-label">Ingrese el nombre del producto: </label>
 					<input type="text" name="nombreProducto" id="nombreProducto" class="form-input" 
-					value= "<%= locals.old !== undefined && old.nombreProducto ? old.nombreProducto : '' %>">
+					value="<%= locals.old !== undefined && old.nombreProducto ? old.nombreProducto : '' %>">
 				</div>
 				<div class="divs-form">
-					<% if(locals.errors && errors.descripcionProducto){ %>
+					<%if (locals.errors && errors.descripcionProducto) { %>
 						<p><%= errors.descripcionProducto.msg %></p>
 					<% } %>
-					<label for="descripcionProducto" class="form-label">Ingrese la nueva descripción del producto: </label>
-					<textarea name="descripcionProducto" id="descripcionProducto" cols="15" rows="5" class="form-input" 
-					value= "<%= locals.old !== undefined && old.descripcionProducto ? old.descripcionProducto : '' %>"></textarea>
+					<label for="descripcionProducto" class="form-label">Ingrese la descripción del producto: </label>
+					<textarea name="descripcionProducto" id="descripcionProducto" cols="15" rows="5" class="form-input"
+					value="<%= locals.old !== undefined && old.descripcionProducto ? old.descripcionProducto : '' %>"></textarea>
+				</div>
+				<div class="divs-form">
+					<%if (locals.errors && errors.edadProducto) { %>
+						<p><%= errors.edadProducto.msg %></p>
+					<% } %>
+					<label for="edadProducto" class="form-label">Ingrese la edad: </label>
+					<input type="number" name="edadProducto" id="edadProducto" class="form-input" 
+					value="<%= locals.old !== undefined && old.edadProducto ? old.edadProducto : '' %>">
+				</div>
+				<div class="divs-form">
+						<%if (locals.errors && errors.especieProducto) { %>
+							<p><%= errors.especieProducto.msg %></p>
+						<% } %>
+					<label for="especieProducto" class="form-label">Ingrese la especie: </label>
+					<input type="text" name="especieProducto" id="especieProducto" class="form-input"
+					value="<%= locals.old !== undefined && old.especieProducto ? old.especieProducto : '' %>">
+				</div>
+				<div class="divs-form">
+					<%if (locals.errors && errors.sexoProducto) { %>
+						<p><%= errors.sexoProducto.msg %></p>
+					<% } %>
+					<label for="sexoProducto" class="form-label">Ingrese el sexo: </label>
+					<input type="text" name="sexoProducto" id="sexoProducto" class="form-input" 
+					value="<%= locals.old !== undefined && old.sexoProducto ? old.sexoProducto : '' %>">
+				</div>
+				<div class="divs-form">
+					<%if (locals.errors && errors.personalidadProducto) { %>
+						<p><%= errors.personalidadProducto.msg %></p>
+					<% } %>
+					<label for="personalidadProducto" class="form-label">Ingrese una descripción de la personalidad: </label>
+					<input type="text" name="personalidadProducto" id="personalidadProducto" class="form-input"
+					value="<%= locals.old !== undefined && old.personalidadProducto ? old.personalidadProducto : '' %>">
 				</div>
 				<div>
-					<button type="submit" class="button-form">Editar producto</button>
+					<button type="submit" class="button-form">Agregar producto</button>
 				</div>
 			</form>
 

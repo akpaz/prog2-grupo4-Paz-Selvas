@@ -40,8 +40,7 @@ const productController = {
     },
     addProduct: function (req, res) {
         if (req.session.user !== undefined) {
-            // Renderizamos a las vistas de product-add. Recibe el objeto errors con un array vacion para usar el el for de
-            return res.render('product-add', {errors: []});
+            return res.render('product-add');
         } else {
             return res.redirect('/');
         }
@@ -160,9 +159,9 @@ const productController = {
                 imagen: req.body.imgProducto,
                 nombre: req.body.nombreProducto,
                 descripcion: req.body.descripcionProducto,
-                edad: req.body.edadproducto,
+                edad: req.body.edadProducto,
                 especie: req.body.especieProducto,
-                sexo: req.body.sexo,
+                sexo: req.body.sexoProducto,
                 personalidad: req.body.personalidadProducto
             })               
             .then(function() {
@@ -172,7 +171,7 @@ const productController = {
                 console.log(e);
             });
         } else {
-            return res.render('product-add', {errors: errors.mapped()})
+            return res.render('product-add', {errors: errors.mapped(), old: req.body})
         }
     } 
 }

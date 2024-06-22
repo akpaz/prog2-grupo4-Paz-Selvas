@@ -15,7 +15,7 @@
 						<h2 class="products-title">
 							<%= producto.nombre %>
 						</h2>
-						<%if (locals.user && locals.user.id===producto.usuarios.id) { %>
+						<%if (locals.user && locals.user.id === producto.usuarios.id) { %>
 							<p class="product-detail-description">
 								<a href="/product-edit/<%= producto.id %>" class="accionesProducto">Editar</a>
 							</p>
@@ -27,8 +27,8 @@
 							<% } %>
 					</div>
 					<div class="product-detail">
-						<h1><a href="/profile/detallePerfil/<%= producto.usuarios%>" class="productoUsuario">
-								<%= producto.usuarios %>
+						<h1><a href="/profile/detallePerfil/<%= producto.usuarios.id %>" class="productoUsuario">
+								<%= producto.usuarios.nombreUsuario %>
 							</a></h1>
 						<div class="row">
 							<article class="col-12 col-lg-8 product-detail-info">
@@ -61,6 +61,9 @@
 							</section> 
 								<%if (locals.user) { %>
 									<form class="form" action="/comentarios/nuevoComentario/<%=producto.id%>" method="post">
+									<%if (locals.errors && errors.comentario) { %>
+										<p class="error"><%= errors.comentario.msg %></p>
+									<% } %>
 									<input class="form-input" type="text" placeholder="Agregar comentario" name="comentario" value="">
 									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 									</form>

@@ -4,7 +4,7 @@ const router = express.Router();
 const productsController = require('../controllers/products');
 // Validaciones:
 const productValidations = require('../middleware/productValidations');
-const addProductValidations = require('../middleware/addProductValidations');
+const addProductValidations = require('../middleware/productValidations');
 
 
 router.get('/', productsController.index);
@@ -23,7 +23,7 @@ router.post('/editarProducto/:idProducto', productValidations, productsControlle
 
 router.post('/crearProducto/:idProducto', productsController.processAdd);
 
-router.post('/product-add', addProductValidations, productsController.processAdd);
+router.post('/product-add', productValidations, productsController.processAdd);
 
 
 module.exports = router;

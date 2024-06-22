@@ -521,6 +521,10 @@ textarea.form-input {
   color: red;
 }
 
+.divs-form .error{
+  font-size: 15px;
+}
+
 .button-form{
   width: 50vw;
   height: 5vh;
