@@ -83,7 +83,6 @@ const usuariosController = {
         return res.redirect('/')
     },
     profile: function (req, res) {
-<<<<<<< HEAD
         if (req.session.user != undefined) {
             let idUsuario = req.session.user.id;
         
@@ -101,7 +100,6 @@ const usuariosController = {
         })} else{
             return res.redirect('/')
         }
-=======
         let idUsuario = req.params.id
         db.Usuario.findByPk(idUsuario, {
             include: [{
@@ -117,59 +115,37 @@ const usuariosController = {
             .catch(function (e) {
                 console.log(e);
             })
->>>>>>> 249fcff14a08a6293604aa2ba545b6e748261489
     },
     profileEdit: function (req, res) {
         let idUsuario = req.params.idUsuario;
         return res.render('profile-edit', { usuario: usuario });
     },
-<<<<<<< HEAD
-    editProcess: function(req, res) {
-        let idUsuario = req.session.usuario;
-=======
     editProcess: function (req, res) {
-        let idUsuario = req.params.idUsuario;
->>>>>>> 249fcff14a08a6293604aa2ba545b6e748261489
         let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
+        if(errors.isEmpty()){
             db.Usuario.update({
                 id: idUsuario,
                 email: req.body.email,
                 nombreUsuario: req.body.nombre,
-                contrasena: bcrypt.hashSync(req.body.password, 10),
+                contrasena: req.body.password,
                 fechaDeNacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 fotoPerfil: req.body.fotoPerfil
             },
-<<<<<<< HEAD
             { where: {
                     id: idUsuario
                 }
             })
             .then(function () {
-            return res.redirect('/profile/detallePerfil' + req.session.usuario);
+            return res.redirect('/detallePerfil');
             })
             .catch(function (e) {
                 console.log(e);
             })
         } else{
-=======
-                {
-                    where: {
-                        id: idUsuario
-                    }
-                })
-                .then(function () {
-                    return res.redirect('/detallePerfil');
-                })
-                .catch(function (e) {
-                    console.log(e);
-                })
-        } else {
->>>>>>> 249fcff14a08a6293604aa2ba545b6e748261489
             return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
-        }
+            } 
     }
 };
 
