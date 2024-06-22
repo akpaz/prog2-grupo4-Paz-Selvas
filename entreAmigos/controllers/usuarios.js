@@ -6,6 +6,7 @@ const datosProductos = require('../db/main');
 const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
+
 const usuariosController = {
     register: function (req, res) {
         if (req.session.user !== undefined) {
@@ -84,10 +85,11 @@ const usuariosController = {
     },
     profile: function (req, res) {
         let idUsuario = req.params.id
-        //Buscamos los datos de la db
         db.Usuario.findByPk(idUsuario,{
-            include: [{association: 'productos', order: [['createdAt', 'DESC']], include: [{association: 'comentarios'}]}, 
-        {association: 'comentarios'}]
+            include: [{association: 'productos', 
+            order: [['createdAt', 'DESC']], 
+            include: [{association: 'comentarios'}]}, 
+            {association: 'comentarios'}]
         })
         .then(function (profile) {
             return res.render('profile', { usuario: profile});
@@ -95,7 +97,6 @@ const usuariosController = {
         .catch(function (e) {
             console.log(e);
         })
-        //return res.render('profile', { usuario: usuario, productos: productos });
     },
     profileEdit: function (req, res) {
         let idUsuario = req.params.idUsuario;
@@ -106,17 +107,21 @@ const usuariosController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            // No hay errores, avanzamos con el código normal
             db.Usuario.update({
+                id: idUsuario,
                 email: req.body.email,
                 nombreUsuario: req.body.nombre,
                 contrasena: req.body.password,
                 fechaDeNacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 fotoPerfil: req.body.fotoPerfil
+            },
+            { where: {
+                    id: idUsuario
+                }
             })
-            .then(function (perfilEditado) {
-                return res.redirect('/');
+            .then(function () {
+            return res.redirect('/detallePerfil');
             })
             .catch(function (e) {
                 console.log(e);
@@ -125,7 +130,7 @@ const usuariosController = {
             return res.render('profile-edit', { usuario: usuario, errors: errors.mapped(), old: req.body });
             } 
         }
-}
+};
 
 
 module.exports = usuariosController;
