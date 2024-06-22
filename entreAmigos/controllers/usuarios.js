@@ -6,6 +6,7 @@ const datosProductos = require('../db/main');
 const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
+
 const usuariosController = {
     register: function (req, res) {
         if (req.session.user !== undefined) {
@@ -84,10 +85,11 @@ const usuariosController = {
     },
     profile: function (req, res) {
         let idUsuario = req.params.id
-        //Buscamos los datos de la db
         db.Usuario.findByPk(idUsuario,{
-            include: [{association: 'productos', order: [['createdAt', 'DESC']], include: [{association: 'comentarios'}]}, 
-        {association: 'comentarios'}]
+            include: [{association: 'productos', 
+            order: [['createdAt', 'DESC']], 
+            include: [{association: 'comentarios'}]}, 
+            {association: 'comentarios'}]
         })
         .then(function (profile) {
             return res.render('profile', { usuario: profile});
@@ -101,7 +103,7 @@ const usuariosController = {
         return res.render('profile-edit', { usuario: usuario });
     },
     editProcess: function(req, res) {
-        let idUsuario = req.params.id;
+        let idUsuario = req.params.idUsuario;
         let errors = validationResult(req);
 
         if(errors.isEmpty()){

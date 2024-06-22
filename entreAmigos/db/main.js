@@ -1,5 +1,6 @@
 const datosProductos = {
     usuario: {
+        id: 1,
         email: 'pedroperez@gmail.com',
         usuario: 'pedroperez',
         password: 'hola1234',
