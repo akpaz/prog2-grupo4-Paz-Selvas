@@ -23,6 +23,6 @@ router.post('/login', loginValidations, usuariosController.processLogin);
 
 router.post('/logout', usuariosController.logout);
 
-router.post('/profile-edit', editProfileValidations, usuariosController.editProcess);
+router.post('/profile-edit/:id', editProfileValidations, usuariosController.editProcess);
 
 module.exports = router;

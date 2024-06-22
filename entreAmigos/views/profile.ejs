@@ -16,7 +16,7 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= usuario.nombreUsuario %> 
-					<% if (locals.user) { %>
+					<% if (locals.user && locals.user.id === usuario.id) { %>
 							<a href="/profile/profile-edit/<%= usuario.id %>">
 								<i class="fas fa-cog"></i>
 							</a>
@@ -59,6 +59,9 @@
 					</a>
 				</section>
 			</div>				
+			<% } %>
+			<% if(usuario.productos.length === 0) { %>
+				<h1> <%= usuario.nombreUsuario %> aún no tiene mascotas en adopción... </h1>
 			<% } %>
 	<!-- /Mis productos -->
 

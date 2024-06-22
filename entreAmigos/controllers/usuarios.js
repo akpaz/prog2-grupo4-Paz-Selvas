@@ -83,26 +83,6 @@ const usuariosController = {
         return res.redirect('/')
     },
     profile: function (req, res) {
-        if (req.session.user != undefined) {
-            let idUsuario = req.session.user.id;
-
-            db.Usuario.findByPk(idUsuario, {
-                include: [{
-                    association: 'productos',
-                    order: [['createdAt', 'DESC']],
-                    include: [{ association: 'comentarios' }]
-                },
-                { association: 'comentarios' }]
-            })
-                .then(function (profile) {
-                    return res.render('profile', { usuario: profile });
-                })
-                .catch(function (e) {
-                    console.log(e);
-                })
-        } else {
-            return res.redirect('/')
-        }
         let idUsuario = req.params.id;
         db.Usuario.findByPk(idUsuario, {
             include: [{
@@ -143,7 +123,7 @@ const usuariosController = {
     editProcess: function (req, res) {
         let errors = validationResult(req);
 
-        let idUsuario = req.session.user.id;
+        let idUsuario = req.params.id;
 
         if (errors.isEmpty()) {
             db.Usuario.update({
@@ -161,7 +141,7 @@ const usuariosController = {
 
             if (req.body.password !== null) {
                 db.Usuario.update({
-                    contrasena: req.body.password,
+                    contrasena: bcrypt.hashSync(req.body.password, 10)
                 },
                     {
                         where: {
