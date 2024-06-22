@@ -46,8 +46,8 @@
 					<% if(locals.errors && errors.nacimiento){ %>
 						<p><%= errors.nacimiento.msg %></p>
 					<% } %>
-					<label for="nacimiento" class="form-label">Editar fecha de nacimiento:</label>
-					<input type="date" name="nacimiento" id="nacimiento" class="form-input"
+					<label for="nacimiento" class="form-label">Editar fecha de nacimiento: (yyyy/mm/dd)</label>
+					<input type="text" name="nacimiento" id="nacimiento" class="form-input"
 					value=" <%= locals.old !== undefined && old.nacimiento ? old.nacimiento : "" %>">
 					
 				</div>

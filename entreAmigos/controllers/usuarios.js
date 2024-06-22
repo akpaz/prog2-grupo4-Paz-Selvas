@@ -6,7 +6,6 @@ const datosProductos = require('../db/main');
 const usuario = datosProductos.usuario;
 const productos = datosProductos.productos;
 
-
 const usuariosController = {
     register: function (req, res) {
         if (req.session.user !== undefined) {
@@ -84,7 +83,9 @@ const usuariosController = {
         return res.redirect('/')
     },
     profile: function (req, res) {
-        let idUsuario = req.params.id
+        if (req.session.user != undefined) {
+            let idUsuario = req.session.user.id;
+        
         db.Usuario.findByPk(idUsuario,{
             include: [{association: 'productos', 
             order: [['createdAt', 'DESC']], 
@@ -96,14 +97,16 @@ const usuariosController = {
         })
         .catch(function (e) {
             console.log(e);
-        })
+        })} else{
+            return res.redirect('/')
+        }
     },
     profileEdit: function (req, res) {
         let idUsuario = req.params.idUsuario;
         return res.render('profile-edit', { usuario: usuario });
     },
     editProcess: function(req, res) {
-        let idUsuario = req.params.idUsuario;
+        let idUsuario = req.session.usuario;
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
@@ -111,7 +114,7 @@ const usuariosController = {
                 id: idUsuario,
                 email: req.body.email,
                 nombreUsuario: req.body.nombre,
-                contrasena: req.body.password,
+                contrasena: bcrypt.hashSync(req.body.password, 10),
                 fechaDeNacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 fotoPerfil: req.body.fotoPerfil
@@ -121,7 +124,7 @@ const usuariosController = {
                 }
             })
             .then(function () {
-            return res.redirect('/detallePerfil');
+            return res.redirect('/profile/detallePerfil' + req.session.usuario);
             })
             .catch(function (e) {
                 console.log(e);
