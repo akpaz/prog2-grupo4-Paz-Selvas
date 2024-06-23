@@ -127,7 +127,6 @@ const productController = {
         if (errors.isEmpty()) {
             // No hay errores, avanzamos con el código normal
             db.Producto.update({
-                idUsuarioPropietario: req.session.user.id,
                 imagen: req.body.imgProducto,
                 nombre: req.body.nombreProducto,
                 descripcion: req.body.descripcionProducto,
