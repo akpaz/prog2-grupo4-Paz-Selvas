@@ -25,7 +25,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         createdAt: {
-            type: dataTypes.DATE 
+            type: dataTypes.DATE
         },
         updatedAt: {
             type: dataTypes.DATE
@@ -41,10 +41,10 @@ module.exports = function (sequelize, dataTypes) {
         underscored: false
     }
 
-    let Usuario = sequelize.define(alias,cols, config);
+    let Usuario = sequelize.define(alias, cols, config);
     //Asociando con Producto.js
-    Usuario.associate = function(models){
-        Usuario.hasMany(models.Producto,{
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Producto, {
             as: "productos",
             foreignKey: "idUsuarioPropietario"
         });
@@ -52,6 +52,6 @@ module.exports = function (sequelize, dataTypes) {
             as: "comentarios",
             foreignKey: "idUsuario"
         });
-    }      
+    }
     return Usuario;
 }

@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 let commentValidations = [
     body('comentario')
         .notEmpty().withMessage('Por favor, complete el comentario.')
-        .isLength({min : 3}).withMessage('El comentario debe tener mínimo 3 caracteres.')
+        .isLength({ min: 3 }).withMessage('El comentario debe tener mínimo 3 caracteres.')
 ];
 
 module.exports = commentValidations;

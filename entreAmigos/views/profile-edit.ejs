@@ -23,7 +23,7 @@
 					<% } %>
 					<label for="email" class="form-label">Editar email:</label>
 					<input id="email" type="email" name="email" class="form-input"
-					value=" <%= locals.old !== undefined && old.email ? old.email : usuario.email %>">
+					value="<%= locals.old !== undefined && old.email ? old.email : usuario.email %>">
 				</div>
 				<div class="divs-form">
 					<% if(locals.errors && errors.usuario){ %>
@@ -31,7 +31,7 @@
 					<% } %>
 					<label for="usuario" class="form-label">Editar nombre de usuario:</label>
 					<input type="text" name="usuario" id="usuario" class="form-input"
-					value=" <%= locals.old !== undefined && old.usuario ? old.usuario : usuario.nombreUsuario %>">
+					value="<%= locals.old !== undefined && old.usuario ? old.usuario : usuario.nombreUsuario %>">
 				</div>
 				<div class="divs-form">
 					<% if(locals.errors && errors.password){ %>
@@ -47,7 +47,7 @@
 					<% } %>
 					<label for="nacimiento" class="form-label">Editar fecha de nacimiento:</label>
 					<input type="date" name="nacimiento" id="nacimiento" class="form-input"
-					value=" <%= locals.old !== undefined && old.nacimiento ? old.nacimiento : usuario.fechaDeNacimiento %>">
+					value="<%= locals.old !== undefined && old.nacimiento ? old.nacimiento : usuario.fechaDeNacimiento %>">
 					
 				</div>
 				<div class="divs-form">
@@ -56,7 +56,7 @@
 					<% } %>
 					<label for="dni" class="form-label">Editar número de documento:</label>
 					<input type="number" name="dni" id="dni" class="form-input"
-					value=" <%= locals.old !== undefined && old.dni ? old.dni : usuario.dni %>">
+					value="<%= locals.old !== undefined && old.dni ? old.dni : usuario.dni %>">
 					
 				</div>
 				<div class="divs-form">
@@ -65,7 +65,7 @@
 					<% } %>
 					<label for="fotoPerfil" class="form-label">Editar foto de perfil:</label>
 					<input type="text" name="fotoPerfil" id="fotoPerfil" class="form-input"
-					value=" <%= locals.old !== undefined && old.fotoPerfil ? old.fotoPerfil : usuario.fotoPerfil %>">
+					value="<%= locals.old !== undefined && old.fotoPerfil ? old.fotoPerfil : usuario.fotoPerfil %>">
 					
 				</div>
 				<div>

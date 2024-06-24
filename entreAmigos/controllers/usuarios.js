@@ -125,6 +125,8 @@ const usuariosController = {
 
         let idUsuario = req.params.id;
 
+        //return res.send(req.body);
+
         if (errors.isEmpty()) {
             db.Usuario.update({
                 email: req.body.email,
@@ -139,7 +141,7 @@ const usuariosController = {
                     }
                 })
 
-            if (req.body.password !== null) {
+            if (req.body.password !== '') {
                 db.Usuario.update({
                     contrasena: bcrypt.hashSync(req.body.password, 10)
                 },
@@ -149,7 +151,7 @@ const usuariosController = {
                         }
                     })
             }
-            
+
             return res.redirect('/');
         } else {
             db.Usuario.findByPk(idUsuario, {

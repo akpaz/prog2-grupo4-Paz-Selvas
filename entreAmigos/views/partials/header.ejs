@@ -34,21 +34,22 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <% if(locals.user != undefined) { %>
+                <% if(locals.user !=undefined) { %>
                     <li><a href="/product-add">Cargar productos</a></li>
                 <% } %>
             </ul>
 
-            <% if(locals.user != undefined) { %>
+            <% if(locals.user !=undefined) { %>
                 <ul>
-                    <h1>Bienvenido/a <%= locals.user.userName %></h1>
+                    <h1>Bienvenido/a <%= locals.user.userName %>
+                    </h1>
                 </ul>
             <% } %>
 
             <ul class="right-navbar">
-                <% if(locals.user != undefined) { %>
+                <% if(locals.user !=undefined) { %>
                     <li><a href="/profile/detallePerfil/<%= locals.user.id %>">
-                            <%= locals.user.userName %> > <i class="fas fa-user"></i>
+                        <%= locals.user.userName %> > <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li>
@@ -57,19 +58,19 @@
                                 Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </form>
-                    </li> 
-                    <% } else { %>
-                        <li>
-                            <a href="/profile/register">Creá tu cuenta <i class="far fa-address-card"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/profile/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-                        </li>
-                        <% } %>
+                    </li>
+                <% } else { %>
+                    <li>
+                        <a href="/profile/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                <% } %>
             </ul>
         </nav>
-        
+
     </div>
 </header>
 <!-- /Header -->
